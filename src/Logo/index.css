@@ -1,0 +1,26 @@
+#Logo{
+    height: 100%;
+    /* max-height: 50vh; */
+    width: 100%;
+    display: flex;
+    /* margin-bottom: 60px; */
+    margin: 0px;
+    justify-content: center;
+    background: #eee;
+    /* padding-bottom: 60px;
+    padding-top: 60px; */
+    align-items: flex-start;
+    background: rgb(238,238,238);
+background: radial-gradient(circle, rgba(238,238,238,0.7301295518207283) 0%, rgba(255,255,255,0.8281687675070029) 50%, rgba(238,238,238,0.7161239495798319) 100%);
+    /* parallex effecet */
+    /* background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-image: url('../media/logo.svg'); */
+
+}
+#Logo img{
+    max-height: 100vw;
+    align-self: center;
+}

@@ -1,0 +1,45 @@
+#InstagramFeed{
+    min-height: 500px;
+    
+}
+.feed-header{
+    text-align: center;
+    color: #3b9950;
+}
+.green-border{
+    width: 60px;
+    margin: 0 auto;
+    height: 5px;
+    background: #3b9950;
+}
+.feed-element{
+    min-height: 200px;
+    /* background: #eee; */
+    width: 200px;
+    margin: 10px;
+    align-self: stretch;
+    
+}
+.feed-element-img{
+    min-height: 200px;
+    background: #eee;
+    width: 200px;
+}
+.feed{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    /* max-height: 40vh; */
+    /* height: 100vh; */
+}
+.profile-username h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.feed-element h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}

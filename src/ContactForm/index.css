@@ -1,0 +1,116 @@
+#ContactForm{
+    min-height: 600px;
+    /* width: 100%; */
+    padding:40px;
+    /* max-width: 100%; */
+
+}
+#ContactForm h1, #ContactForm h2{
+    padding-left: 10px;
+    color: #53917c;
+}
+#ContactForm .form{
+    
+}
+#ContactForm .info{
+    
+}
+#ContactForm .form-grid-element{
+    min-height: 300px;
+    background: #FFF;
+    width: 45%;
+    min-width: 400px;
+    margin: 10px;
+}
+@media screen and (max-width: 1000px){
+    #ContactForm .form-grid-element{
+        width: 100%;
+        min-width: 100px;
+    }
+}
+.form-grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-grid label{
+    color: #53917c;
+    font-size: 0.8em;
+}
+.form-input{
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    border: 2px #53917c solid;
+    border-radius: 5px;
+    min-height: 40px;
+    background: #eee;
+}
+.form-container{
+    height: 100%;
+}
+.form-line{
+    margin-top: 20px;
+}
+.form-line textarea{
+    min-height: 80px;
+}
+.form-button {
+	border: none;
+	outline: none;
+	padding: 20px 60px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+	border-radius: 5px;
+	cursor: pointer;
+	background: #53917c;
+	display: block;
+    transition: .3s all ease;
+    max-height: 53px;
+	letter-spacing: 2px;
+}
+.form-button:hover{
+    color: #000;
+}
+.profile-pic img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.feed-element-user{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+.feed-element-text{
+    
+    
+    align-self: center;
+}
+.profile-pic{
+    align-self: center;
+}
+.submit-button-wrapper{
+    display: inline-flex;
+}
+.submit-button-wrapper h4{
+    margin-left: 10px;
+    color: #53917c;
+}
+#error-message{
+    color:#f95353;
+}
+.slider {
+	overflow-y: hidden;
+	max-height: 500px; /* approximate max height */
+
+	transition-property: all;
+	transition-duration: 5s;
+	transition-timing-function: cubic-bezier(0, 10, 5, 10);
+}
+.slider.closed {
+	max-height: 0;
+}
