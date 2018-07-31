@@ -1,0 +1,224 @@
+.person-add-button{
+    overflow: visible;
+    -webkit-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    -webkit-transition: color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    transition: color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    -o-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    color: #FFF;
+    background: #000;
+}
+.person-add-button:before {
+    position: relative;
+    z-index: 100;
+    content:"+";
+}
+.person-add-button:hover {
+    transform: scale(1.5);
+}
+.person-delete-button{
+    overflow: visible;
+    -webkit-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    -webkit-transition: color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    transition: color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    -o-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s;
+    transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46), color 0s ease .4s,font-size .2s, -webkit-transform .4s cubic-bezier(.58,-0.37,.45,1.46);
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    color: #000;
+    background: #000;
+    height: 0px;
+    transform: rotate(45deg);
+}
+.person-delete-button:before {
+    position: relative;
+    z-index: 100;
+    content:"+";
+}
+.person-delete-button:hover {
+    transform: scale(1.5) rotate(45deg);
+}
+.person-input{
+    text-align: center;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.23em;
+    -webkit-margin-after: 0.13em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Titillium Web', sans-serif;
+    /* font-size: 20px; */
+
+}
+.name-input{
+    margin-top: 10px;
+}
+.description-input{
+    font-family: 'Dancing Script', cursive;
+    width: 70%;
+}
+.imagesrc-input{
+    width: 70%;
+}
+.cover-input{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 17px;
+    width: 90%;
+    height: 100%;
+}
+#Main-About {
+
+    background: rgb(240,240,240);
+    background: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(235,235,235,1) 50%, rgba(226,226,226,1) 100%);
+    padding-top: 40px
+    /* min-height: 95vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px; */
+}
+#Main-About  h1{
+    text-align: center;
+    color: #FFF;
+    font-family: 'Titillium Web', sans-serif;
+}
+#Main-About .person-cover{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.582);
+    color: #b9a767;
+    width: 76%;
+    padding-left: 12%;
+    padding-right: 12%;
+    position: relative;
+    top: -45%;
+    height: 186px;
+    -webkit-clip-path: circle(65% at 50% 8.5%);
+    clip-path: circle(65% at 50% 8.5%);
+    visibility: hidden;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 17px;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  #Main-About .person:hover .person-cover{
+    animation: 1s fadeIn;
+    animation-fill-mode: forwards;
+    /* visibility: visible; */
+}
+#Main-About .person:active .person-cover{
+    /* visibility: visible; */
+    animation: 1s fadeIn;
+    animation-fill-mode: forwards;
+}
+
+#Main-About .person{
+    max-width: 450px;
+}
+#Main-About .person-image{
+    clip-path: circle(50%);
+    width: 450px;
+    height: 450px;
+    background: #fff;
+
+}
+#Main-About .person-image-cut{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 88%);
+}
+#Main-About .person-image img{
+    width: 50%;
+    height: 81%;
+    object-fit: contain;
+    margin-left: 25%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    margin-top: 10%;
+
+}
+#Main-About .person-description h3 {
+    font-family: 'Dancing Script', cursive;
+}
+#Main-About .person-description {
+    text-align: center;
+    position: relative;
+    padding-top: 0px;
+    border-top: 5px solid rgba(0, 0, 0, 0.582);
+    top: -55px;
+    width: 64%;
+    margin-left: 18%;
+    line-height: 10px;
+
+}
+
+#Main-About .persons {
+    
+
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+
+}
+@media screen and ( max-width: 768px){
+    #Main-About .person{
+        /* max-width: 375px;
+        max-height: 350px; */
+        transform: scale(0.8);
+        max-height: 450px;
+    }
+    #Main-About .person-cover{
+        transform: translateY(-65%);
+    }
+    /* #Main-About .person-cover{
+        transform: translateY(-80%);
+    }
+    #Main-About  h1{
+        margin-bottom: 0px;
+    }
+    
+    #Main-About .person-image{
+        clip-path: circle(50%);
+        width: 375px;
+        height: 375px;
+        background: #fff;
+
+    }
+    #Main-About .person-image-cut{
+
+    }
+    #Main-About .person-image img{
+        width: 50%;
+        height: 81%;
+        object-fit: contain;
+        margin-left: 25%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+
+    }
+    #Main-About .person-description {
+
+    }
+
+    #Main-About .persons {
+        
+
+        margin: 0 auto;
+        padding-top: 20px;
+        transform: translateY(-20%) scale(0.7);
+    } */
+}

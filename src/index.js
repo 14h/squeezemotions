@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SqueezeMotions from './SqueezeMotions';
+import SqueezeMotions from './MainComponents/SqueezeMotions';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom';
 import 'photoswipe/dist/photoswipe.css';

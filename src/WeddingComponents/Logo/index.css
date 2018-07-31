@@ -1,0 +1,101 @@
+#Logo{
+    height: 100%;
+    /* max-height: 50vh; */
+    width: 100%;
+    display: flex;
+    /* margin-bottom: 60px; */
+    margin: 0px;
+    justify-content: center;
+    /* background: #eee; */
+    /* padding-bottom: 60px;
+    padding-top: 60px; */
+    align-items: flex-start;
+    /* background: rgb(238,238,238); */
+    /* background: radial-gradient(circle, rgba(238,238,238,0.7301295518207283) 0%, rgba(255,255,255,0.8281687675070029) 50%, rgba(238,238,238,0.7161239495798319) 100%); */
+    /* background: rgb(38,38,38); */
+background: radial-gradient(circle, rgba(38,38,38,1) 24%, rgba(0,0,0,0.8281687675070029) 50%, rgba(45,45,45,1) 80%);
+    /* parallex effecet */
+    /* background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-image: url('../media/logo.svg'); */
+
+}
+#Logo img{
+    max-height: 100vw;
+    align-self: center;
+}
+#Logo svg{
+    width: 400px;
+    height: 400px;
+    margin-top: 25vh;
+}
+.shorties{
+    color: #FFF;
+}
+.shorties-first{
+    position: absolute;
+    left: 12.5%;
+    top: 20vh;
+}
+.shorties-second{
+    position: absolute;
+    left: 12.5%;
+    top: 75vh;
+}
+.shorties-third{
+    position: absolute;
+    right: 12.5%;
+    top: 20vh;
+}
+.shorties-fourth{
+    position: absolute;
+    right: 12.5%;
+    top: 75vh;
+}
+.shorties-top{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+.shorties-bottom{
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+}
+@media screen and (max-width: 1000px){
+    .shorties-first{
+        position: absolute;
+        left: 5%;
+        top: 17vh;
+    }
+    .shorties-second{
+        position: absolute;
+        left: 5%;
+        top: 80vh;
+    }
+    .shorties-third{
+        position: absolute;
+        right: 5%;
+        top: 17vh;
+    }
+    .shorties-fourth{
+        position: absolute;
+        right: 5%;
+        top: 80vh;
+    }
+    .shorties-top{
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        font-size: 28px;
+    }
+    .shorties-bottom{
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+    }
+    #Logo svg{
+        width: 300px;
+        height: 300px;
+        margin-top: 30vh;
+    }
+}
