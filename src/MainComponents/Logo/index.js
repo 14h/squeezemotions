@@ -21,11 +21,11 @@ const logoParallaxData = [
 	  start: 350,
 	  duration: 300,
 	  properties: [
-		{
-		  startValue: 0,
-		  endValue: 350,
-		  property: "translateY"
-		},
+		// {
+		//   startValue: 0,
+		//   endValue: 350,
+		//   property: "translateY"
+		// },
 		{
 		  startValue: 0.25,
 		  endValue: 0,
@@ -46,22 +46,22 @@ const logoParallaxData = [
 		  endValue: 0.25,
 		  property: "opacity"
 		},
-		{
-			startValue: 12.5,
-			endValue: 0,
-			property: "left"
-		  }
+		// {
+		// 	startValue: 12.5,
+		// 	endValue: 0,
+		// 	property: "left"
+		//   }
 	  ]
 	},
 	{
 	  start: 350,
 	  duration: 300,
 	  properties: [
-		{
-		  startValue: 0,
-		  endValue: -350,
-		  property: "translateX"
-		}
+		// {
+		//   startValue: 0,
+		//   endValue: -350,
+		//   property: "translateX"
+		// }
 	  ]
 	},
 	
@@ -83,11 +83,11 @@ const logoParallaxData = [
 	  start: 350,
 	  duration: 300,
 	  properties: [
-		{
-		  startValue: 0,
-		  endValue: 350,
-		  property: "translateY"
-		},
+		// {
+		//   startValue: 0,
+		//   endValue: 350,
+		//   property: "translateY"
+		// },
 		{
 		  startValue: 0.25,
 		  endValue: 0,
@@ -125,19 +125,19 @@ export default class Logo extends Component {
 					>
 						<Link to="wedding" className=" shorties-link shorties-first">
 							<div className="shorties-top">
-								TRAUUNG & PARTY
+								Creative Production
 							</div>
-							<div className="shorties-bottom">
+							{/* <div className="shorties-bottom">
 								Fotographie
-							</div>
+							</div> */}
 						</Link>
 						<Link to="wedding"  className=" shorties-link shorties-second">
 							<div className="shorties-top">
-								PORTRAIT
+							Bewegte Bilder
 							</div>
-							<div className="shorties-bottom">
+							{/* <div className="shorties-bottom">
 								Fotographie
-							</div>
+							</div> */}
 						</Link>
 					</Plx>
 					<Plx
@@ -146,22 +146,28 @@ export default class Logo extends Component {
 					>
 						<Link to="wedding"  className=" shorties-link shorties-third">
 							<div className="shorties-top">
-								HOCHZEITS
+								Deine Idee
 							</div>
-							<div className="shorties-bottom">
+							{/* <div className="shorties-bottom">
 								Videos
-							</div>
+							</div> */}
 						</Link>
 						<Link to="wedding"  className=" shorties-link shorties-fourth">
 							<div className="shorties-top">
-								VERANSTALTUNG
+							Fotografie
 							</div>
-							<div className="shorties-bottom">
+							{/* <div className="shorties-bottom">
 								Video & Fotographie
-							</div>
+							</div> */}
 						</Link>
 					</Plx>
 				</div>
+				
+				{/* <svg className="arrow-down" viewBox="0 0 210 210"   xmlns="http://www.w3.org/2000/svg">
+					<g><path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z"></path></g>
+				</svg> */}
+    
+
 			</div>
 		);
 	}

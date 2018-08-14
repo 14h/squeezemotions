@@ -9,12 +9,16 @@ import Logo from '../Logo';
 // import { Route } from 'react-router';
 import Ballroom from '../Ballroom';
 import BallroomGallery from '../BallroomGallery';
+// import NavigationBar from '../NavigationBar';
 import NavigationBar from '../../MainComponents/NavigationBar';
 import './index.css';
 // import { Fullpage, Slide } from 'fullpage-react';
-import Reviews from '../Reviews';
+// import Reviews from '../Reviews';
 // import ContactForm from '../ContactForm';
 import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
+import Kontakt from '../Kontakt';
+import ContactForm from '../ContactForm';
+
 const { changeFullpageSlide, changeHorizontalSlide } = Fullpage;
 
 
@@ -115,19 +119,20 @@ const fullPageOptions = {
   
 	  const prevHorizontalSlide = changeHorizontalSlide.bind(null, horizontalSliderName, horizontalActive - 1);
 	  const nextHorizontalSlide = changeHorizontalSlide.bind(null, horizontalSliderName, horizontalActive + 1);
-  
+  // <div style={topNavStyle}>
+		//   <span onClick={prevSlide}>
+		// 	<button>Previous Slide</button>
+		//   </span>
+		//   <span onClick={goToTop}>
+		// 	<button>Back to Top</button>
+		//   </span>
+		//   <span onClick={nextSlide}>
+		// 	<button>Next Slide</button>
+		//   </span>
+		// </div>
 	  const topNav = (
-		<div style={topNavStyle}>
-		  <span onClick={prevSlide}>
-			<button>Previous Slide</button>
-		  </span>
-		  <span onClick={goToTop}>
-			<button>Back to Top</button>
-		  </span>
-		  <span onClick={nextSlide}>
-			<button>Next Slide</button>
-		  </span>
-		</div>
+		
+		<NavigationBar wedding={true} />
 	  );
   
 	  const horizontalNav = (
@@ -159,20 +164,33 @@ const fullPageOptions = {
 		}}>
 		  <Ballroom />
 		</Slide>,
+		// <Slide>
+		// 	<Reviews />
+		// </Slide>,
+		<Slide>
+			<Blog />
+		</Slide>,
+		<Slide>
+			<ContactForm />
+		</Slide>,
+		
+		
+		// <Kontakt />
 		// <Slide style={{
 		// 	height: '75vh'
 		// }}>
 		// 	<BallroomGallery selected={1} />
 		// </Slide>,
-		horizontalSlider,
-		<Slide style={{backgroundColor: 'pink'}}><p>Slide 3</p></Slide>
+		// horizontalSlider,
+		// <Slide style={{backgroundColor: 'pink'}}><p>Slide 3</p></Slide>
 	  ];
 	  fullPageOptions.slides = verticalSlides;
   
 	  return (
-		<Fullpage onSlideChangeStart={this.onSlideChangeStart} onSlideChangeEnd={this.onSlideChangeEnd} {...fullPageOptions}>
-		  {topNav}
-		</Fullpage>
+			<div><Ballroom /></div>
+		// <Fullpage onSlideChangeStart={this.onSlideChangeStart} onSlideChangeEnd={this.onSlideChangeEnd} {...fullPageOptions}>
+		//   {topNav}
+		// </Fullpage>
 	  );
 	}
   }

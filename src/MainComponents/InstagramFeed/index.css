@@ -1,6 +1,108 @@
+
+.insta-overlay{
+    height: 100%;
+    width: 269px;
+    background: #0000004b;
+    /* transform: translateY(-102%); */
+    visibility: hidden;
+    position: relative;
+    top: 0%;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+.insta-overlay-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+}
+
+
+.insta-overlay-content-item{
+    margin-right: 10px;
+}
+
+.feed-element:hover .insta-overlay{
+    visibility: visible;
+}
+.doc {
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
+    font-size: 0;
+  }
+  .doc:before {
+    content: "";
+    transition: .3s;
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .doc .links {
+    text-align: center;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    overflow: hidden;
+    opacity: 0;
+    transition: .2s;
+  }
+  
+  .doc .links i {
+    font-size: 35px;
+    margin: 0 auto;
+    position: relative;
+    padding: 15px;
+  }
+  
+  .doc a {
+    color: #FFF;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .doc span {
+    font-size: 16px;
+  }
+  
+  .doc:hover:before {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .doc:hover .links {
+    opacity: 1;
+  }
+  
+
+
+
+
 #InstagramFeed{
     min-height: 500px;
-    
+}
+.instagram-post-link:link{
+    text-decoration: none;
+    color: #000;
+}
+.instagram-post-link:visited{
+    text-decoration: none;
+    color: #000;
+}
+.instagram-post-link:hover{
+    text-decoration: none;
+    color: #000;
+}
+.instagram-post-link:active{
+    text-decoration: none;
+    color: #000;
 }
 .feed-header{
     text-align: center;
@@ -15,25 +117,41 @@
 .feed-element{
     min-height: 200px;
     /* background: #eee; */
-    width: 200px;
-    margin: 10px;
+    width: 269px;
+    margin: 3px;
+    border-radius: 5%;
     align-self: stretch;
+    background: #FFF;
     
 }
+.feed-element-text{
+    word-break: break-word;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #262626;
+}
 .feed-element-img{
-    min-height: 200px;
-    background: #eee;
-    width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 }
 .feed{
     display: flex;
-    flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: column;
     width: 100%;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-top: 30px;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    /* max-height: 40vh; */
+    max-height: 95vh;
     /* height: 100vh; */
+    background: #EFEFEF;
+    max-width: 100vw;
+    overflow-x: scroll;
 }
 .profile-username h6 {
     font-family: 'Poppins', sans-serif;
@@ -42,4 +160,23 @@
 .feed-element h4{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+.profile-pic img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.feed-element-user{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    padding: 5px;
+}
+.feed-element-text{
+    
+    
+    align-self: center;
+}
+.profile-pic{
+    align-self: auto;
 }

@@ -75,24 +75,7 @@
 .form-button:hover{
     color: #000;
 }
-.profile-pic img{
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.feed-element-user{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: start;
-}
-.feed-element-text{
-    
-    
-    align-self: center;
-}
-.profile-pic{
-    align-self: center;
-}
+
 .submit-button-wrapper{
     display: inline-flex;
 }

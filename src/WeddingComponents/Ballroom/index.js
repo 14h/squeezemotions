@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BallroomGallery from '../BallroomGallery';
+import Vivus from "vivus";
 
 import './index.css';
 // import jeels from '../media/01.jpg';
@@ -15,10 +16,23 @@ export default class Ballroom extends Component {
 			fifth: "#b9a767",
 			selected: 1
 		};
-	  }
+	}
 	
 	
-	
+	componentDidMount(){
+        let svnOption1 = new Vivus('svg-option1',{
+			type: 'delayed',
+			duration: 200,
+			animTimingFunction: Vivus.EASE
+		}, ()=>{console.log("error")});
+		svnOption1.play(1, function() {
+			// called after the animation completes
+		  })
+        new Vivus('svg-option2', {duration: 200}, ()=>{console.log("error")});
+        new Vivus('svg-option3', {duration: 200}, ()=>{console.log("error")});
+        new Vivus('svg-option4', {duration: 200}, ()=>{console.log("error")});
+        new Vivus('svg-option5', {duration: 200}, ()=>{console.log("error")});
+    }  
 	render() {
 		return (
 			<div>
@@ -51,7 +65,7 @@ export default class Ballroom extends Component {
 						}}
 						>
 							<div className="option-image">
-								<svg width="10vw" height="10vw" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+								<svg id="svg-option1" width="10vw" height="10vw" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
 
 									<g>
 										<title>background</title>
@@ -88,7 +102,7 @@ export default class Ballroom extends Component {
 						}}
 						>
 							<div className="option-image">
-								<svg width="10vw" height="10vw" viewBox="0 0 160 160"  xmlns="http://www.w3.org/2000/svg">
+								<svg id="svg-option2" width="10vw" height="10vw" viewBox="0 0 160 160"  xmlns="http://www.w3.org/2000/svg">
 
 									<g>
 										<title>background</title>
@@ -128,7 +142,7 @@ export default class Ballroom extends Component {
 						}}
 						>
 							<div className="option-image">
-								<svg width="10vw" height="10vw" viewBox="0 0 180 180"  xmlns="http://www.w3.org/2000/svg">
+								<svg id="svg-option3" width="10vw" height="10vw" viewBox="0 0 180 180"  xmlns="http://www.w3.org/2000/svg">
 
 									<g>
 										<title>background</title>
@@ -168,7 +182,7 @@ export default class Ballroom extends Component {
 						}}
 						>
 							<div className="option-image">
-								<svg  width="10vw" height="10vw" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+								<svg id="svg-option4"  width="10vw" height="10vw" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
 
 									<g>
 										<title>background</title>
@@ -208,16 +222,10 @@ export default class Ballroom extends Component {
 						}}
 						>
 							<div className="option-image">
-								<svg   width="10vw" height="10vw" viewBox="0 0 160 160"  xmlns="http://www.w3.org/2000/svg">
+								<svg id="svg-option5"   width="10vw" height="10vw" viewBox="0 0 160 160"  xmlns="http://www.w3.org/2000/svg">
 
-									<g>
-										<title>background</title>
 										<rect fill="none" id="canvas_background" height="162" width="162" y="-1" x="-1"/>
-									</g>
-									<g>
-										<title>Layer 1</title>
 										<path d="m118.800005,11.450005l-77.9,0l-33.7,31.8l72.8,105.3l72.8,-105.3l-34,-31.8zm16.8,29.9l-30.4,0l10.9,-18.3l19.5,18.3zm-24.8,-19.5l-10.4,17.6l-13.4,-17.6l23.8,0zm-30.2,0l14.8,19.7l-31.1,0l14.8,-19.7l1.5,0zm-8,0l-13.4,17.6l-10.4,-17.6l23.8,0zm-28.9,1.2l10.9,18.3l-30.4,0l19.5,-18.3zm-21.8,23.4l35.1,0l16.1,74.1l-51.2,-74.1zm40.5,0l35.1,0l-17.7,80.9l-17.4,-80.9zm40.3,0l35.1,0l-51.2,74.1l16.1,-74.1z" fill={this.state.fifth} id="XMLID_47_"/>
-									</g>
 								</svg>
 							</div>
 							<div className="option-title" style={{

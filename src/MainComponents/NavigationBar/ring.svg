@@ -1,0 +1,11 @@
+<svg width="60" height="50" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="62" height="52" id="canvas_background" fill="none"/>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <polygon stroke="#BFA568" transform="rotate(-27 33.04999542236327,20.500001907348633) " fill="none" stroke-width="10" stroke-miterlimit="10" points="25.9259090423584,3.8153038024902344 46.939388275146484,14.635087966918945 52.06462478637695,25.252622604370117 21.723220825195312,37.18470001220703 14.03536319732666,5.534345626831055 " id="svg_11"/>
+ </g>
+</svg>

@@ -1,3 +1,6 @@
+.arrow-down{
+    position: absolute;
+}
 #Main-Logo{
     height: 95vh;
     /* max-height: 50vh; */
@@ -11,7 +14,8 @@
     padding-top: 60px; */
     align-items: flex-start;
     background: rgb(238,238,238);
-    background: radial-gradient(circle, rgba(209, 209, 209, 0.73) 0%, rgba(218, 213, 213, 0.828) 50%, rgba(207, 202, 202, 0.716) 100%);
+    background: radial-gradient(circle, rgb(182, 182, 182) 0%, rgba(218, 213, 213, 0.828) 50%, rgb(242, 242, 242) 100%);
+    /* background: radial-gradient(circle, rgb(200, 200, 200) 0%, rgba(50, 100, 50, 0.828) 50%, rgb(0, 0, 0) 100%); */
 
     /* parallex effecet */
     /* background-attachment: fixed;
@@ -80,6 +84,8 @@
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 28px;
+    font-family: 'Poiret One', cursive;
+    max-width: 130px;
 }
 #Main-Logo .shorties-bottom{
     font-family: 'Dancing Script', cursive;

@@ -3,7 +3,8 @@
     background: #FFF;
     /* height: 7vh; */
     z-index: 99999;
-    /* position: fixed; */
+    position: fixed;
+    
     top: 0px;
     display: inline-flex;
     flex-direction: row;

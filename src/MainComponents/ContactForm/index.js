@@ -140,7 +140,13 @@ export default class ContactForm extends Component {
 							<h2>giveme@squeezemotions.com</h2>
 							<h2>+49 151-2408-5757</h2>
 						</div>
-						<div className="bottom"></div>
+						<div className="bottom">
+							<h3>Datenschutz</h3>
+							<p>
+								Disclaimer - rechtliche Hinweise
+								
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

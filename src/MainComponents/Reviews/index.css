@@ -1,3 +1,13 @@
+.review-name{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+}
+.review-name-text{
+    margin-top: 5px;
+}
+
 
 .add-button {
     position: relative;
@@ -119,7 +129,10 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+}
+.react-swipeable-view-container {
+    padding-bottom: 50px;
 }
 .review{
     /* min-height: 200px; */
@@ -129,6 +142,11 @@
     background: #FFF;
     border-radius: 10px;
     color: #045b10;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 .review:hover{
     /* background: rgb(238, 238, 238, 0.7); */
