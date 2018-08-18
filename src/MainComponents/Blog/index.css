@@ -1,6 +1,7 @@
 #Blog{
     background: #FFF;
     padding-bottom: 4vh;
+    margin-top: 60px;
 ;
 }
 .blog-entry p{
@@ -38,6 +39,7 @@
 .blog-entry-row{
     border-top: solid #3b9950 3px;
     padding-top: 10px;
+    cursor: pointer;
 }
 .blog-overlay{
     width: 100vw;
@@ -51,6 +53,7 @@
     width: calc(100vw - 60px);
     overflow-y: scroll;
     display: none;
+    z-index: 25;
 
 }
 .blog-overlay img{
@@ -77,9 +80,7 @@
     text-align: left;
     margin-bottom: 150px;
 }
-.no-scroll{
-    overflow: hidden;
-}
+
 .scroll{
     /* overflow: scroll; */
 }

@@ -70,10 +70,11 @@
     transform: rotate(45deg) scale(1.5);
     
 }
-  
+
 .parallax { 
     /* The image used */
     background-image: url("https://images.pexels.com/photos/64687/pexels-photo-64687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    
 
     /* Full height */
     height: 100%; 
@@ -84,7 +85,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     /* -webkit-filter: blur(1px); */
-
 
     /* filter: grayscale(100%) sepia(100%) hue-rotate(90deg); */
 }
@@ -109,7 +109,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
 }
-#Reviews{
+.Reviews{
     width: 100%;
     /* min-height: 100vh; */
 
@@ -146,14 +146,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
 
-}
-.review:hover{
-    /* background: rgb(238, 238, 238, 0.7); */
-}
 .review h4{
     text-align: right;
 }
 .review h3{
     font-family: 'Dancing Script', cursive;
+}
+.wedding .review{
+    color: #333;
+    background: #bfa568;
+}
+.wedding.parallax{
+    background-image: url("https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }

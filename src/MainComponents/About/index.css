@@ -71,7 +71,7 @@
     width: 90%;
     height: 100%;
 }
-#Main-About {
+.Main-About {
 
     background: rgb(240,240,240);
     background: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(235,235,235,1) 50%, rgba(226,226,226,1) 100%);
@@ -82,12 +82,12 @@
     flex-direction: column;
     padding-top: 40px; */
 }
-#Main-About  h1{
+.Main-About  h1{
     text-align: center;
     color: #FFF;
     font-family: 'Titillium Web', sans-serif;
 }
-#Main-About .person-cover{
+.Main-About .person-cover{
     text-align: center;
     background: rgba(0, 0, 0, 0.582);
     color: #FEFEFE;;
@@ -114,31 +114,31 @@
       opacity: 1;
     }
   }
-  #Main-About .person:hover .person-cover{
+  .Main-About .person:hover .person-cover{
     animation: 1s fadeIn;
     animation-fill-mode: forwards;
     /* visibility: visible; */
 }
-#Main-About .person:active .person-cover{
+.Main-About .person:active .person-cover{
     /* visibility: visible; */
     animation: 1s fadeIn;
     animation-fill-mode: forwards;
 }
 
-#Main-About .person{
+.Main-About .person{
     max-width: 450px;
 }
-#Main-About .person-image{
+.Main-About .person-image{
     clip-path: circle(50%);
     width: 450px;
     height: 450px;
     background: #fff;
 
 }
-#Main-About .person-image-cut{
+.Main-About .person-image-cut{
     clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 88%);
 }
-#Main-About .person-image img{
+.Main-About .person-image img{
     width: 50%;
     height: 81%;
     object-fit: contain;
@@ -148,10 +148,10 @@
     margin-top: 10%;
 
 }
-#Main-About .person-description h3 {
+.Main-About .person-description h3 {
     font-family: 'Dancing Script', cursive;
 }
-#Main-About .person-description {
+.Main-About .person-description {
     text-align: center;
     position: relative;
     padding-top: 0px;
@@ -163,7 +163,7 @@
 
 }
 
-#Main-About .persons {
+.Main-About .persons {
     
 
     justify-content: space-around;
@@ -175,33 +175,33 @@
 
 }
 @media screen and ( max-width: 768px){
-    #Main-About .person{
+    .Main-About .person{
         /* max-width: 375px;
         max-height: 350px; */
         transform: scale(0.8);
         max-height: 450px;
     }
-    #Main-About .person-cover{
+    .Main-About .person-cover{
         transform: translateY(-65%);
     }
-    /* #Main-About .person-cover{
+    /* .Main-About .person-cover{
         transform: translateY(-80%);
     }
-    #Main-About  h1{
+    .Main-About  h1{
         margin-bottom: 0px;
     }
     
-    #Main-About .person-image{
+    .Main-About .person-image{
         clip-path: circle(50%);
         width: 375px;
         height: 375px;
         background: #fff;
 
     }
-    #Main-About .person-image-cut{
+    .Main-About .person-image-cut{
 
     }
-    #Main-About .person-image img{
+    .Main-About .person-image img{
         width: 50%;
         height: 81%;
         object-fit: contain;
@@ -210,11 +210,11 @@
         border-top-right-radius: 50%;
 
     }
-    #Main-About .person-description {
+    .Main-About .person-description {
 
     }
 
-    #Main-About .persons {
+    .Main-About .persons {
         
 
         margin: 0 auto;

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 // import Kontakt from '../Kontakt';
 // import NavigationBar from '../NavigationBar';
 // import Gallery from '../Gallery';
-import About from '../About';
+import About from '../../MainComponents/About';
 import Blog from '../Blog';
-import Logo from '../Logo';
+// import Logo from '../Logo';
+import Logo from '../../MainComponents/Logo'
 // import InstagramFeed from '../InstagramFeed';
 // import { Route } from 'react-router';
 import Ballroom from '../Ballroom';
@@ -16,7 +17,7 @@ import './index.css';
 // import Reviews from '../Reviews';
 // import ContactForm from '../ContactForm';
 import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
-import Kontakt from '../Kontakt';
+// import Kontakt from '../Kontakt';
 import ContactForm from '../ContactForm';
 
 const { changeFullpageSlide, changeHorizontalSlide } = Fullpage;
@@ -159,11 +160,11 @@ const fullPageOptions = {
 		<Slide >
 		  <Logo />
 		</Slide>,
-		<Slide style={{
-			height: '100vh'
-		}}>
-		  <Ballroom />
-		</Slide>,
+		// <Slide style={{
+		// 	height: '100vh'
+		// }}>
+		//   <Ballroom />
+		// </Slide>,
 		// <Slide>
 		// 	<Reviews />
 		// </Slide>,
@@ -187,7 +188,13 @@ const fullPageOptions = {
 	  fullPageOptions.slides = verticalSlides;
   
 	  return (
-			<div><Ballroom /></div>
+			<div>
+				<NavigationBar wedding={true} />
+				<Logo wedding={true}/>
+				<Ballroom />
+				<About />
+
+			</div>
 		// <Fullpage onSlideChangeStart={this.onSlideChangeStart} onSlideChangeEnd={this.onSlideChangeEnd} {...fullPageOptions}>
 		//   {topNav}
 		// </Fullpage>

@@ -4,12 +4,15 @@ import { Route } from 'react-router';
 import Kontakt from '../Kontakt';
 import NavigationBar from '../NavigationBar';
 import About from '../About';
+import WeddingAbout from '../WeddingAbout'
 import Blog from '../Blog';
 import Logo from '../Logo';
 import Showroom from '../Showroom';
-import ImageView from '../ImageView';
+// import ImageView from '../ImageView';
 import Reviews from '../Reviews';
-import Login from '../Login';
+// import Login from '../Login';
+import Ballroom from '../Ballroom';
+import LazyLoad from 'react-lazyload';
 
 // import Wedding from '../../WeddingComponents/Wedding';
 
@@ -24,6 +27,49 @@ import MultimediaGallery from '../../MultimediaGallery';
 // import Gallery from '../Gallery';
 
 // import Ballroom from '../../WeddingComponents/Ballroom';
+const creativeProducers = [
+    {
+        name: 'Lukas Jahzzy Pete Dubting',
+        thing: 'DeSign',
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        imageSRC: 'https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/19894915_10211753938022550_5304336737176909157_n.jpg?_nc_cat=0&oh=8f3c30b5c0b07f344bf6823d00709e49&oe=5BF75129',
+        themeColor: "rgb(100, 212, 135)",
+        
+    },
+    {
+        name: 'Abdallah Kawji',
+        thing: 'Dev',
+        text: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        imageSRC: 'https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/29178143_1688937441202498_9061295218237636608_o.jpg?_nc_cat=0&oh=08cb982f647c5b081dc991b5b17eaede&oe=5BF6B545',
+        themeColor: "rgb(0, 0, 0)",
+        
+    },
+    {
+        name: 'Jeels Szepanek',
+        thing: 'Consult',
+        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+        imageSRC: 'https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/32336664_10214718303566349_2363335819395072_o.jpg?_nc_cat=0&oh=859a277c1208ed3d3c50279f65c0e8d4&oe=5BFEF7B9',
+        themeColor: "rgb(246, 180, 41)",
+    },
+]
+const SQZM = [
+    {
+        name: 'Larissa Jablonka',
+        thing: 'Fotografie',
+        text: "Ihr wollt kreative Fotografie? Larissa ist sprichwörtlich für jedes Abenteuer zu haben. Sie fotografiert von Afrika über Island bis nach Zürich alles was ihr vor die Linse kommt. Und das mit atemberaubenden Ergebnissen. Überzeugt Euch selbst!",
+        imageSRC: 'https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/39111149_2667764673249686_4312954017740226560_n.jpg?_nc_cat=0&oh=a2286143387a78117370167057715334&oe=5C04D941',
+        themeColor: "rgb(100, 212, 135)",
+        
+    },
+    {
+        name: 'Jeels Szepanek',
+        thing: 'Video & Produktion',
+        text: "Jeels ist unser Allrounder. Ob Foto oder Video, beides fasziniert ihn. Es fing an mit einigen Urlaubs- und Hochzeitsvideos bis schließlich die Entscheidung fiel, alles auf professionellere Beine zu stellen. Squeezemotions war geboren.",
+        imageSRC: 'https://scontent-ber1-1.xx.fbcdn.net/v/t1.0-9/32336664_10214718303566349_2363335819395072_o.jpg?_nc_cat=0&oh=859a277c1208ed3d3c50279f65c0e8d4&oe=5BFEF7B9',
+        themeColor: "rgb(252, 30, 79)",
+        
+    }
+]
 
 export default class SqueezeMotions extends Component {
 	constructor(props) {
@@ -43,13 +89,13 @@ export default class SqueezeMotions extends Component {
 					name: 'Jeelz',
 					description:'Video & Produktion',
 					cover: 'Jeels ist unser Allrounder. Ob Foto oder Video, beides fasziniert ihn. Es fing an mit einigen Urlaubs- und Hochzeitsvideos bis schließlich die Entscheidung fiel, alles auf professionellere Beine zu stellen. Squeezemotions war geboren.',
-					imageSrc: './images/01.jpg'
+					imageSrc: 'https://i.imgur.com/h0tkn76.jpg'
 				},
 				{
 					name: 'Larissa',
 					description:'Fotografie',
 					cover: 'Ihr wollt kreative Fotografie? Larissa ist sprichwörtlich für jedes Abenteuer zu haben. Sie fotografiert von Afrika über Island bis nach Zürich alles was ihr vor die Linse kommt. Und das mit atemberaubenden Ergebnissen. Überzeugt Euch selbst!',
-					imageSrc: './images/02.png'
+					imageSrc: 'https://i.imgur.com/GCZGRff.jpg'
 				},
 			],
 			reviews:[
@@ -227,60 +273,54 @@ export default class SqueezeMotions extends Component {
 
 		return (
 			<div>
-			{/* <Route exact path="/wedding" component={ () => (<Wedding />)} /> */}
+			<Route exact path="/wedding" component={ () => (<div>
+				<NavigationBar wedding={true} />
+				<Logo wedding={true}/>
+				<Ballroom />
+				{/* <About /> */}
+				<Reviews wedding={true} admin={this.state.admin} reviews={this.state.reviews} addReview={this.addReview} deleteReview={this.deleteReview}/>
+				<WeddingAbout /> 
+				
+				{/* <Kontakt wedding={true}/> */}
+			</div>)} />
 			{/* <Route  path="/admin" component={ () => (<Login switchAdmin={this.switchAdmin} />)} /> */}
-			<Route exact path="/imageview" component={ () => (<ImageView photos={this.state.photos} imageViewSelected={this.state.imageViewSelected} changeImageViewSelected={this.changeImageViewSelected}/>)} />
-			{/* <Route exact path="/blog" component={ () => (<Blog />)} /> */}
+
+			<Route exact path="/blog" component={ () => (
+				<div>
+					<NavigationBar wedding={false} selectedNav="blog"/>
+					<Blog />
+				</div>
+			)} />
 			<Route exact path="/gallery" component={ () => (<MultimediaGallery />)} />
-			<Route exact path="/creativeproducer" component={ () => (<CreativeProducer />)} />
+			<Route exact path="/creativeproducer" component={ () => (
+				<div>
+					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
+					<CreativeProducer  Producers={creativeProducers}/>
+				</div>
+			)} />
+			<Route exact path="/sqzm" component={ () => (
+				<div>
+					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
+					<CreativeProducer  Producers={SQZM}/>
+				</div>
+			)} />
 			
 			<Route  exact path="/" component={ () => (<div>
 				
 				<NavigationBar wedding={false}/>
-				
-				<Logo/>
-				
+				<Logo wedding={false}/>
 				<Showroom  admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
-				{/* <ImageView imageViewSelected={this.state.imageViewSelected} changeImageViewSelected={this.changeImageViewSelected}/> */}
-				<Reviews admin={this.state.admin} reviews={this.state.reviews} addReview={this.addReview} deleteReview={this.deleteReview}/>
-				
-				<About admin={this.state.admin} persons={this.state.persons} addPerson={this.addPerson} removePerson={this.removePerson}/>
-				<InstagramFeed />
-				<Kontakt />
-
-				{/* <img src="https://source.unsplash.com/2ShvY8Lf6l0/800x599" width="501.4" height="377" 
-				onMouseOver={(e)=>{
-					var bodyRect = document.body.getBoundingClientRect(),
-					elemRect = e.target.getBoundingClientRect(),
-					offset   = elemRect.top - bodyRect.top;
-					// var rect = e.target.getBoundingClientRect();
-					console.log(offset);
-					if(this.state.overlayHeight !== e.target.height || this.state.overlayWidth !== e.target.width){
-						this.setState({
-							overlayWidth: e.target.width,
-							overlayHeight: e.target.height,
-							overlayOffset:offset,
-							overlayLeft: elemRect.left
-						})
-					}
-				}}
-				/> */}
-				{/* <div id="overlay" 
-				onMouseLeave={(e)=>{
-
-					this.setState({
-						overlayWidth: 0,
-						overlayHeight: 0,
-						overlayOffset:0,
-						overlayLeft: 0
-					})
-				}}
-				style={{background: 'rgb(0, 0, 0, 0.2)',height:this.state.overlayHeight, width:this.state.overlayWidth, position:'absolute', top:this.state.overlayOffset, left:this.state.overlayLeft}}></div> */}
-				
-				{/* < Ballroom /> */}
-				
+				<LazyLoad height={500} once offset={[900, 0]} >
+					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.reviews} addReview={this.addReview} deleteReview={this.deleteReview}/>
+				</ LazyLoad>	
+				<LazyLoad height={500} once offset={[900, 0]} >
+					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons} addPerson={this.addPerson} removePerson={this.removePerson}/>
+				</ LazyLoad>
+				<LazyLoad height={500} once placeholder={<div/>} offset={[900, 0]} >
+					<InstagramFeed />
+				</ LazyLoad>
+				<Kontakt wedding={false}/>
 			</div>)} />
-			{/* <Home/> */}
 			</div>
 			
 		);

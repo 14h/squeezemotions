@@ -9,6 +9,12 @@
     transition: all 1.5s ease;
     display: inline-flex;
     width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 15;
+    transition: top 0.3s;
+    max-width: 100vw;
 }
 .social-buttons{
     float: right;
@@ -222,16 +228,16 @@
     color: #045b10;
 }
 .wedding .nav-list-item:hover{
-    color: #d2d534;
+    color: #bfa568;
 }
 .wedding .nav-list-item .selected{
-    color: #d2d534;
+    color: #bfa568;
 }
 .main.nav-list-item-dot{
     content: "";
     /* content: url(./ring.svg); */
-    height: 8px;
-    width: 8px;
+    height: 4px;
+    width: 4px;
     background-color: #045b10;
     border-radius: 50%;
     position: relative;
@@ -245,8 +251,8 @@
 .main.nav-list-item-dot-selected{
     
     content: "";
-    height: 8px;
-    width: 8px;
+    height: 5px;
+    width: 4px;
     background-color: #045b10;
     border-radius: 50%;
     position: relative;
@@ -269,6 +275,7 @@
     left: -50%;
     visibility: hidden;
     transition: all 0.1s ease;
+    margin-left: -8px;
 
 }
  .wedding.nav-list-item-dot-selected { 
@@ -282,7 +289,7 @@
      top: -10px;
      left: -50%;
      visibility: visible;
-   
+     margin-left: -8px;
 }
   a.nav-list-item{
       text-decoration: none;
@@ -308,11 +315,11 @@ a.nav-list-item:active{
 }
 .wedding a.nav-list-item:hover{
     text-decoration: none;
-    color: #d2d534;
+    color: #bfa568;
 }
 .wedding a.nav-list-item:active{
     text-decoration: none;
-    color: #d2d534;
+    color: #bfa568;
 }
 
   @media screen and (min-width: 768px){

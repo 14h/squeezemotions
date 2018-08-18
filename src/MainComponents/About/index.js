@@ -98,7 +98,7 @@ export default class About extends Component {
 	}
 	render() {
 		return (
-			<div id="Main-About" name="team">
+			<div className="Main-About" name="team">
 				<div className="section-header">Hinter den Kulissen</div>
 				<div className="white-border" />
 				<div className="persons">

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './index.css';
 // import jeels from '../media/01.jpg';
 // import Larissa from '../media/01.png';
-export default class About extends Component {
+export default class WeddingAbout extends Component {
 	
 	render() {
 		return (

@@ -1,8 +1,71 @@
 import React, { Component } from 'react';
-import BallroomGallery from '../BallroomGallery';
+// import BallroomGallery from '../BallroomGallery';
 import Vivus from "vivus";
+import SwipeableViews from 'react-swipeable-views';
+import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
 
 import './index.css';
+
+
+const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
+
+// function slideRenderer(params) {
+//     const { index, key } = params;
+//     if(photos[index%photos.length])
+//     return (
+//       <img src={photos[index%photos.length].src} key={key} alt="sasad"/> 
+//     );
+//     return (
+//         <div key={key}/> 
+//       );
+// }
+
+const photos = [
+  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
+  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
+  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
+  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
+  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
+  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
+  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
+  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
+  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
+  
+]
+const images= [
+	[
+		'https://images.pexels.com/photos/1058770/pexels-photo-1058770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/706140/pexels-photo-706140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/276690/pexels-photo-276690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/265097/pexels-photo-265097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/1058770/pexels-photo-1058770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/1058770/pexels-photo-1058770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/1058770/pexels-photo-1058770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+	],
+	[
+		'https://images.pexels.com/photos/1125329/pexels-photo-1125329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/627716/pexels-photo-627716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/303349/pexels-photo-303349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/190537/pexels-photo-190537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'	
+	],
+	[
+		'https://images.pexels.com/photos/64687/pexels-photo-64687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/35624/auto-car-cadillac-oldtimer.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/40658/classic-car-automobile-car-retro-40658.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	],
+	[
+		'https://images.pexels.com/photos/192499/pexels-photo-192499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/175690/pexels-photo-175690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/69930/bugatti-1932-car-automobile-69930.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	],
+	[
+		'https://images.pexels.com/photos/1222469/pexels-photo-1222469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/432632/pexels-photo-432632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+		'https://images.pexels.com/photos/1068638/pexels-photo-1068638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	]
+]
+
+// import './index.css';
 // import jeels from '../media/01.jpg';
 // import Larissa from '../media/01.png';
 export default class Ballroom extends Component {
@@ -14,11 +77,35 @@ export default class Ballroom extends Component {
 			third: "#b9a767",
 			fourth: "#b9a767",
 			fifth: "#b9a767",
-			selected: 1
+			selected: 1,
+			imageViewSelected: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+			indexBallroom:0,
 		};
+		this.slideRenderer = this.slideRenderer.bind(this)
+	}
+	slideRenderer(params) {
+		const { index, key } = params;
+		if(images[this.state.selected-1][index%images[this.state.selected-1].length])
+		return (
+		  <img src={images[this.state.selected-1][index%images[this.state.selected-1].length]} key={key} alt="sasad"/> 
+		);
+		return (
+			<div key={key}/> 
+		  );
 	}
 	
-	
+	handleChangeIndex = indexBallroom => {
+		if(indexBallroom<0){
+		  indexBallroom = photos.length + indexBallroom;
+		}
+		this.setState({
+		  indexBallroom,
+		});
+		// console.log(index)
+	};
+	changeImageViewSelected(newImageViewSelected){
+		this.setState({imageViewSelected: newImageViewSelected});
+	}
 	componentDidMount(){
         let svnOption1 = new Vivus('svg-option1',{
 			type: 'delayed',
@@ -234,7 +321,31 @@ export default class Ballroom extends Component {
 						</a>
 					</div>
 				</div>
-				<BallroomGallery selected={this.state.selected} />
+				{/* <BallroomGallery selected={this.state.selected} /> */}
+				<div className="ballroom-imageview-container">
+					{this.state.imageViewSelected.length > 0 && <div id="ImageView" style={{height: '100vh'}}>
+						<img className="blurred-image" src={images[this.state.selected -1][this.state.indexBallroom%photos.length]} alt="asasf"/>
+						<div className="selected-image">
+						<VirtualizeSwipeableViews
+							index={this.state.indexBallroom}
+							onChangeIndex={this.handleChangeIndex}
+							slideRenderer={this.slideRenderer}
+							/>
+						</div>
+					</div>
+					}
+					<div className="photos-slider">
+						{images && images[this.state.selected-1].map((image,i)=><img onClick={()=>{
+
+							this.changeImageViewSelected(image)
+							this.setState({
+							indexBallroom: i
+							})
+						}
+						}className={(images[this.state.selected-1][this.state.indexBallroom%photos.length] === image )?("photos-slider-img selected"):("photos-slider-img")} src={image} alt="asjfnaskjfn" key={"photpos"+ i }/>)}
+					</div>
+				</div>
+
 			</div>
 		);
 	}

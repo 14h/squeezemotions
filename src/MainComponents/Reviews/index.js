@@ -12,71 +12,14 @@ export default class Reviews extends Component {
     constructor(props) {
 		super(props);
 		this.state = {
-            // reviews:[
-            //     {
-            //         name: "0Lorasdaem",
-            //         text: "Lorem Ipsum is simdaply dummy text of the printing and typesetting industry."
-            //     },
-            //     {
-            //         name: "1Lorefdsgm",
-            //         text: "Lorem Ipsum is siadmply dummy text of the printing and typesetting industry."
-            //     },
-            //     {
-            //         name: "2Loradsadem",
-            //         text: "Lorem Ipsum is gdsimply dummy text of the printing and typesetting industry."
-            //     },
-            //     {
-            //         name: "3Lorgfgem",
-            //         text: "Lorem Ipsasdum is simply dummy text of the printing and typesetting industry."
-            //     },
-            //     {
-            //         name: "4Loasdrem",
-            //         text: "Lorem Ipsugfdhm is simply dummy text of the printing and typesetting industry."
-            //     }
-            // ],
             reviewName:'',
             reviewText:'',
             reviewInstagramLink:''
         };
-        
         this.handleChangeReviewName = this.handleChangeReviewName.bind(this);
         this.handleChangeReviewText = this.handleChangeReviewText.bind(this);
         this.handleChangeReviewInstagramLink = this.handleChangeReviewInstagramLink.bind(this);
     }
-    // addReview(){
-    //     this.setState((prevState)=> {
-    //         let tempReviews = prevState.reviews;
-    //         tempReviews.push({
-    //             name:prevState.reviewName,
-    //             text:prevState.reviewText
-    //         })
-    //         return {
-    //                 reviews: tempReviews,
-    //                 reviewName:'',
-    //                 reviewText:'',
-    //         }
-    //     });
-    // }
-    // deleteReview(e){
-    //     let reviewTempName = e.target.parentElement.children[2].innerHTML
-    //     let reviewTempText = e.target.parentElement.children[1].innerHTML
-    //     this.setState((prevState)=> {
-    //         let tempReviews = prevState.reviews;
-    //         var index = -1;
-    //         tempReviews.forEach((e,i) => {
-
-    //             if(e.name === reviewTempName && e.text ===reviewTempText){
-    //                 index = i;
-    //             }
-    //         });
-    //         if (index > -1) {
-    //             tempReviews.splice(index, 1);
-    //         }
-    //         return {
-    //                 reviews: tempReviews
-    //         }
-    //     });
-    // }
 	handleChangeReviewText(e){
         this.setState({reviewText:e.target.value})
     }
@@ -101,7 +44,7 @@ export default class Reviews extends Component {
           }
         let reviewsChunks = chunk(this.props.reviews,3);
 		return (
-			<div id="Reviews" className="parallax">
+			<div className={this.props.wedding? ("parallax Reviews wedding"):("parallax Reviews ")}>
                 <div className="section-header">Was man über uns sagt</div>
                 <div className="white-border" />
                 
@@ -116,7 +59,7 @@ export default class Reviews extends Component {
                                     </h3>
                                     <div className="review-name">
                                         {review.instagramLink && <a href={review.instagramLink} target='_blank'>
-                                            <svg width="30px" height="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" style={{'enable-background':'new 0 0 512 512'}}>
+                                            <svg width="30px" height="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" style={{'enableBackground':'new 0 0 512 512'}}>
                                                 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-46.0041" y1="634.1208" x2="-32.9334" y2="647.1917" gradientTransform="matrix(32 0 0 -32 1519 20757)">
                                                     <stop  offset="0" style={{stopColor:'#FFC107'}}/>
                                                     <stop  offset="0.507" style={{stopColor:'#F44336'}}/>

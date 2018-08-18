@@ -1,127 +1,198 @@
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    top: 89vh;
+    font-size: 20px;
+    color: #000;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+@-webkit-keyframes bounce {
+    0% {
+        top: 89vh;
+    }
+    50% {
+        top: 91vh;
+    }
+    100% {
+        top: 89vh;
+    }
+}
+@keyframes bounce {
+    0% {
+        top: 89vh;
+    }
+    50% {
+        top: 91vh;
+    }
+    100% {
+        top: 89vh;
+    }
+}
+
 .arrow-down{
     position: absolute;
 }
-#Main-Logo{
+.Main-Logo{
     height: 95vh;
-    /* max-height: 50vh; */
+
     width: 100%;
     display: flex;
-    /* margin-bottom: 60px; */
+
     margin: 0px;
     justify-content: center;
     background: #eee;
-    /* padding-bottom: 60px;
-    padding-top: 60px; */
+   
     align-items: flex-start;
     background: rgb(238,238,238);
     background: radial-gradient(circle, rgb(182, 182, 182) 0%, rgba(218, 213, 213, 0.828) 50%, rgb(242, 242, 242) 100%);
-    /* background: radial-gradient(circle, rgb(200, 200, 200) 0%, rgba(50, 100, 50, 0.828) 50%, rgb(0, 0, 0) 100%); */
-
-    /* parallex effecet */
-    /* background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: initial;
-    background-image: url('../media/logo.svg'); */
 
 }
-/* LINKS  */
-#Main-Logo a.shorties-link {
+.Wedding-Logo{
+    background: linear-gradient(133deg, #bfa568, #000000, #bfa568);
+    background-size: 600% 600%;
+    
+    -webkit-animation: AnimationName 7s ease infinite;
+    -moz-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+}
+.Wedding-Logo .ja-message{
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    text-align: center;
+    width: 100vw;
+    top: 80vh;
+    color: #fff;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 43%}
+    50%{background-position:100% 58%}
+    100%{background-position:0% 43%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 43%}
+    50%{background-position:100% 58%}
+    100%{background-position:0% 43%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 43%}
+    50%{background-position:100% 58%}
+    100%{background-position:0% 43%}
+}
+/* LINKS MAIN */
+a.shorties-link {
     color: #000;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
-#Main-Logo a.shorties-link:link {
+a.shorties-link:link {
     color: #000;
     text-decoration: none;
 }
-#Main-Logo a.shorties-link:hover {
+a.shorties-link:hover {
     color: #045b10;
     text-decoration: none;
 }
-#Main-Logo a.shorties-link:active {
+a.shorties-link:active {
     color: #045b10;
     text-decoration: none;
 }
-#Main-Logo a.shorties-link:visited {
+a.shorties-link:visited {
     /* color: #000; */
     text-decoration: none;
 }
+
+/* LINKS WEDDING */
+
+.wedding a.shorties-link {
+    color: #FFF;
+}
+.wedding a.shorties-link:link {
+    color: #FFF;
+}
+.wedding a.shorties-link:hover {
+    color: #BFA568;
+}
+.wedding a.shorties-link:active {
+    color: #BFA568;
+}
+
 /* ************************* */
-#Main-Logo img{
+/* #Main-Logo img{
     max-height: 100vw;
     align-self: center;
-}
-#Main-Logo svg{
+} */
+.main-svg{
     width: 400px;
     height: 400px;
     margin-top: 25vh;
 }
-#Main-Logo .shorties{
+.shorties{
     color: #000;
 }
-#Main-Logo .shorties-first{
+.shorties-first{
     position: absolute;
     left: 12.5%;
     top: 20vh;
 }
-#Main-Logo .shorties-second{
+.shorties-second{
     position: absolute;
     left: 12.5%;
     top: 75vh;
 }
-#Main-Logo .shorties-third{
+.shorties-third{
     position: absolute;
     right: 12.5%;
     top: 20vh;
 }
-#Main-Logo .shorties-fourth{
+.shorties-fourth{
     position: absolute;
     right: 12.5%;
     top: 75vh;
 }
-#Main-Logo .shorties-top{
+.shorties-top{
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 28px;
     font-family: 'Poiret One', cursive;
     max-width: 130px;
 }
-#Main-Logo .shorties-bottom{
+.shorties-bottom{
     font-family: 'Dancing Script', cursive;
     font-size: 28px;
 }
 @media screen and (max-width: 1000px){
-    #Main-Logo .shorties-first{
+    .shorties-first{
         position: absolute;
         left: 5%;
         top: 17vh;
     }
-    #Main-Logo .shorties-second{
+    .shorties-second{
         position: absolute;
         left: 5%;
         top: 80vh;
     }
-    #Main-Logo .shorties-third{
+    .shorties-third{
         position: absolute;
         right: 5%;
         top: 17vh;
     }
-    #Main-Logo .shorties-fourth{
+    .shorties-fourth{
         position: absolute;
         right: 5%;
         top: 80vh;
     }
-    #Main-Logo .shorties-top{
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
-        font-size: 28px;
+    .shorties-top{
+        /* font-family: 'Oswald', sans-serif; */
+        /* font-weight: bold; */
+        /* font-size: 28px; */
     }
-    #Main-Logo .shorties-bottom{
+    .shorties-bottom{
         font-family: 'Dancing Script', cursive;
         font-size: 20px;
     }
-    #Main-Logo svg{
+    .main-svg{
         width: 300px;
         height: 300px;
         margin-top: 30vh;

@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-
-
 import Gallery from 'react-photo-gallery';
 import Measure from 'react-measure';
-import './index.css';
-// import Tabs from '@material-ui/core/Tabs';
-// import Tab from '@material-ui/core/Tab';
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
-// import ImageView from '../ImageView';
-
-
 import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
-// import '../ImageView/index.css'
+
+import './index.css';
+
+
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
+
 function slideRenderer(params) {
     const { index, key } = params;
-    
     if(photos[index%photos.length])
     return (
       <img src={photos[index%photos.length].src} key={key} alt="sasad"/> 
@@ -24,16 +18,7 @@ function slideRenderer(params) {
     return (
         <div key={key}/> 
       );
-      
 }
-
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-// import SupportTouch from 'docs/src/modules/components/SupportTouch';
-
-
-
 
 const photos = [
   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
@@ -49,17 +34,15 @@ const photos = [
 ]
 
 function chunk (arr, len) {
-
   var chunks = [],
       i = 0,
       n = arr.length;
-
   while (i < n) {
     chunks.push(arr.slice(i, i += len));
   }
-
   return chunks;
 }
+
 function findWithAttr(array, attr, value) {
   console.log('array', array, 'att', attr, 'value', value)
   for(var i = 0; i < array.length; i += 1) {
@@ -94,11 +77,11 @@ export default class Showroom extends Component {
     });
   };
 
-  handleChangeIndex = indexOverlay => {
-    this.setState({
-      indexOverlay,
-    });
-  };
+  // handleChangeIndex = indexOverlay => {
+  //   this.setState({
+  //     indexOverlay,
+  //   });
+  // };
   addReview(){
       
   }
@@ -142,9 +125,8 @@ export default class Showroom extends Component {
         <div className="white-border"></div>
 
         <SwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex}>
-        {/* <AutoPlaySwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex}> */}
+
           {this.state.photos.map((page,i)=>{
-            console.log(this.state.photos.indexOf(page))
             return <div className="Gallery" key={"page"+i} >
                       <Measure  bounds onResize={(contentRect) => this.setState({ width: contentRect.bounds.width })}>
                         {
@@ -165,12 +147,13 @@ export default class Showroom extends Component {
                             return <Gallery 
                                       
                                       onClick={(e)=>{
-                                        // console.log(e.target.src);
-                                        // this.props.changeImageViewSelected(e.target.src);
+                                        // document.body.classList.add('no-scroll');
+                                        document.body.style.overflow="hidden";
+                                        if(document.getElementById('Showroom'))
 
+                                        // console.log(document.getElementById('Showroom').scrollTop + document.getElementById('Showroom').getBoundingClientRect().top ) 
+                                        // window.onscroll = function () { window.scrollTo(0, document.getElementById('Showroom').scrollTop + document.getElementById('Showroom').getBoundingClientRect().top); };
                                         this.switchOverlay(findWithAttr(photos, 'src',e.target.src));
-                                        // console.log(document.getElementById('ImageViewContainer'))
-                                        // if(document.getElementById('ImageViewContainer')) document.getElementById('ImageViewContainer').scrollIntoView({  behavior: 'smooth' });
                                       }}
                                       key={page[0].src} 
                                       photos= {page} 
@@ -183,28 +166,21 @@ export default class Showroom extends Component {
           })}
          
         </SwipeableViews>
-        {/* </AutoPlaySwipeableViews> */}
-        
-
         <div className="pagination">
-
           <div style={this.state.index >0 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index-1)}>‹</div>
           {this.state.photos.map((page,i)=>{
             return <div key={"photos"+i} className={this.state.index===i? "selected":""} onClick={(e)=>this.handleChange(e,i)}>{i+1}</div>
           })}
-          
-          <div onClick={(e)=>this.handleChange(e,this.state.index+1)}>›</div>
-
+          <div style={this.state.index <this.state.photos.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index+1)}>›</div>
         </div>
-        {/* <ImageView show={this.state.showOverlay} switchOverlay={this.switchOverlay} photos={photos} index={this.state.indexOverlay}/> */}
+
+
         <div id="ImageViewContainer" style={{display: this.state.showOverlay ? ('block'):('none')}}>
                 {this.state.imageViewSelected.length > 0 && <div id="ImageView" style={{height: '100vh'}}>
                     <span className="close-button" onClick={()=>{
-                        // this.close()
                         this.switchOverlay();
-                        // this.props.changeImageViewSelected('');
-                        // console.log('closing', this.state)
-                        
+                        // document.body.classList.remove('no-scroll');
+                        document.body.style.overflow="auto";
                     }}></span>
 
                     <img className="blurred-image" src={photos[this.state.indexOverlay%photos.length].src} alt="asasf"/>
