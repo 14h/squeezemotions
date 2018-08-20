@@ -49,7 +49,7 @@ export default class Reviews extends Component {
                 <div className="white-border" />
                 
                 
-                <AutoPlaySwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex}>
+                <AutoPlaySwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex} enableMouseEvents>
 
                     {reviewsChunks.map((reviewsChunk,i)=><div className="reviews-list" key={"review"+i}>
                         {reviewsChunk.length>0 && reviewsChunk.map((review)=><div key={review.text} className="review">

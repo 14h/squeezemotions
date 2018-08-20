@@ -167,7 +167,7 @@ export default class Logo extends Component {
 						className='MyAwesomeParallax'
 						parallaxData={ shortiesParallaxData1 } // your parallax effects, see beneath
 					>
-						<Link to="wedding" className=" shorties-link shorties-first">
+						<Link to="creativeproductio" className=" shorties-link shorties-first">
 							<div className="shorties-top">
 								Creative Production
 							</div>
@@ -175,7 +175,7 @@ export default class Logo extends Component {
 								Fotographie
 							</div> */}
 						</Link>
-						<Link to="wedding"  className=" shorties-link shorties-second">
+						<Link to="videografie"  className=" shorties-link shorties-second">
 							<div className="shorties-top">
 							Bewegte Bilder
 							</div>
@@ -196,7 +196,7 @@ export default class Logo extends Component {
 								Videos
 							</div> */}
 						</Link>
-						<Link to="wedding"  className=" shorties-link shorties-fourth">
+						<Link to="photografie"  className=" shorties-link shorties-fourth">
 							<div className="shorties-top">
 							Fotografie
 							</div>

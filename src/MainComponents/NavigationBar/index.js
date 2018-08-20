@@ -84,6 +84,7 @@ export default class NavigationBar extends Component {
 
 		let blogSelectedClass = this.props.selectedNav ==='blog' ? (' nav-list-item-dot-selected'):('')
 		let creativeproducerSelectedClass = this.props.selectedNav === 'creativeproducer'? (' nav-list-item-dot-selected'):('')
+		let photografieSelectedClass = this.props.selectedNav === 'photografie'? (' nav-list-item-dot-selected'):('')
 
 
 		return (
@@ -157,7 +158,7 @@ export default class NavigationBar extends Component {
 							<div  className={this.props.wedding ? ('wedding  nav-list-item-dot'): ('main  nav-list-item-dot' + creativeproducerSelectedClass)}/>
 							</Link>
 							<div className="nav-list-item">:</div>
-							<div  className="nav-list-item" 
+							<Link to="photografie"  className="nav-list-item" 
 							onMouseOver={(e)=>{
 								if(e.target.classList.contains('nav-list-item-dot-selected')){
 									return;
@@ -176,10 +177,10 @@ export default class NavigationBar extends Component {
 								this.setState({selected: 'PHOTOGRAFIE'})
 							}} 
 							>PHOTOGRAFIE
-							<div  className={this.props.wedding ? ('wedding  nav-list-item-dot'): ('main  nav-list-item-dot')}/>
-							</div>
+							<div  className={this.props.wedding ? ('wedding  nav-list-item-dot'): ('main  nav-list-item-dot' + photografieSelectedClass)}/>
+							</Link>
 							<div className="nav-list-item">:</div>
-							<div className="nav-list-item"
+							<Link to="videografie" className="nav-list-item"
 							onMouseOver={(e)=>{
 								if(e.target.classList.contains('nav-list-item-dot-selected')){
 									return;
@@ -199,7 +200,7 @@ export default class NavigationBar extends Component {
 							}}
 							>VIDEOGRAFIE
 							<div  className={this.props.wedding ? ('wedding  nav-list-item-dot'): ('main  nav-list-item-dot')}/>
-							</div>
+							</Link>
 							<div className="nav-list-item">:</div>
 							<Link to="sqzm" className="nav-list-item"
 							onMouseOver={(e)=>{
@@ -271,8 +272,10 @@ export default class NavigationBar extends Component {
 						<div className="nav2">
 							<Link className="nav2-elem" onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="/">HOME</Link>
 							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to=""></Link>
-							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="gallery">KREATIVE PRODUCER</Link>
-							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="about">TEAM</Link>
+							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="creativeproducer">CREATIVE PRODUCER</Link>
+							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="photografie">PHOTOGRAFIE</Link>
+							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="videografie">VIDEOGRAFIE</Link>
+							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="sqzm">SQZM</Link>
 							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to="blog">BLOG</Link>
 							<Link className="nav2-elem"  onClick={()=>{this.toggleNavOverlay();this.toggleNavOverlayInput()}} to=""></Link>
 						</div>

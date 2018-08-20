@@ -217,7 +217,7 @@
       font-family: 'Poiret One', cursive;
       /* font-family: 'Didact Gothic', sans-serif; */
       cursor: pointer;
-      font-weight: bold;
+      /* font-weight: bold; */
       font-size: 20px;
       transition: all 0.5s ease;
   }

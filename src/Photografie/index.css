@@ -1,0 +1,80 @@
+.photografie{
+    padding-top: 70px;
+}
+
+.ytp-pause-overlay{
+    display: none!important;
+}
+
+
+.video-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.article{
+    min-height: 500px;
+    width: 100vw;
+    background: #eee;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #F4F1EC;
+}
+.reversed{
+    flex-direction: row-reverse;
+}
+.article-side{
+    width: 50%;
+    min-width: 400px;
+}
+.article-image{
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.article-image img{
+    width: 100%;
+    height: auto;
+}
+.article-name{
+    margin: 0 auto;
+    padding: 60px 30px 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 23px;
+    line-height: 22px;
+    position: relative;
+    max-width: 520px;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+.article-body{
+    max-width: 90vw;
+    max-width: 520px;
+    margin: 20px auto;
+    line-height: 24px;
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+}
+
+@media screen and (max-width:720px){
+    .article-side{
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+
+
+
+
+
+
+

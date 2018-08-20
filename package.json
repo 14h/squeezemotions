@@ -24,6 +24,7 @@
     "react-photo-gallery": "^6.0.29",
     "react-photoswipe": "^1.3.0",
     "react-photoswipe-component": "^1.0.13",
+    "react-player": "^1.6.4",
     "react-plx": "^1.3.7",
     "react-portal": "^4.1.5",
     "react-reveal-text": "^0.1.1",
@@ -35,6 +36,8 @@
     "react-smooth-scrollbar": "^8.0.6",
     "react-sublime-video": "^0.2.5",
     "react-swipeable-views": "^0.12.15",
+    "react-vimeo": "^2.0.0",
+    "react-youtube": "^7.6.0",
     "smooth-scrollbar": "^8.3.0",
     "string-hash": "^1.1.3",
     "vivus": "^0.4.4"

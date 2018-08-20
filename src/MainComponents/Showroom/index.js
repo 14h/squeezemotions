@@ -124,7 +124,7 @@ export default class Showroom extends Component {
         <div className="section-header">Showroom</div>
         <div className="white-border"></div>
 
-        <SwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex}>
+        <SwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex} enableMouseEvents>
 
           {this.state.photos.map((page,i)=>{
             return <div className="Gallery" key={"page"+i} >
@@ -189,6 +189,7 @@ export default class Showroom extends Component {
                         index={this.state.indexOverlay}
                         onChangeIndex={this.handleChangeIndex}
                         slideRenderer={slideRenderer}
+                        enableMouseEvents
                         />
                     </div>
                 </div>
