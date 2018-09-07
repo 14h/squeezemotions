@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import './index.css';
@@ -85,6 +85,7 @@ export default class About extends Component {
 	render() {
 		return (
 			<div id="Blog">
+			
 				<div className="blog-overlay">
 					<div className="close-button" onClick={()=>this.switchBlogOverlay()}></div>
 					<div className="cover-image"><img src={this.state.selectedBlog.imageSource} alt="blog"/></div>
@@ -97,8 +98,9 @@ export default class About extends Component {
 				<Grid fluid>
 				
 					<Row>
-						{blogs.map((e, i)=><Col key={i} className="blog-entry" xs={12} md={12} lg={6}>
+						{blogs.map((e, i)=><Col key={i} className="blog-entry" xs={12} md={12} lg={12}>
 						{i%2!==0 ? (
+							<Link to={"blog/" + i}>
 							<Row className="blog-entry-row" onClick={()=>this.switchBlogOverlay(e)}>
 								<Col xs={5} md={5} lg={5}><img src={e.imageSource} alt={e.blogName} width="auto" /></Col>
 								<Col xs={7} md={7} lg={7}>
@@ -120,6 +122,7 @@ export default class About extends Component {
 									</Row>
 								</Col>
 							</Row>
+							</Link>
 						) : (
 							<Row className="blog-entry-row" onClick={()=>this.switchBlogOverlay(e)}>
 								

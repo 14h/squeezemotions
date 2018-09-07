@@ -97,12 +97,13 @@ export default class About extends Component {
 		})
 	}
 	render() {
+		if(this.props.persons && this.props.persons.length > 0)
 		return (
 			<div className="Main-About" name="team">
 				<div className="section-header">Hinter den Kulissen</div>
 				<div className="white-border" />
 				<div className="persons">
-					{this.props.persons && this.props.persons.map((person)=>{
+					{ this.props.persons.map((person)=>{
 						return <div className="person" key={person.cover}>
 						
 									<div className="person-image-cut">
@@ -160,6 +161,8 @@ export default class About extends Component {
 				</div>
 			</div>
 		);
+		else
+		return(<div/>)
 	}
 }
 

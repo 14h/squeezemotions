@@ -9,39 +9,39 @@ import './index.css';
 
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
 
-function slideRenderer(params) {
-    const { index, key } = params;
-    if(photos[index%photos.length])
-    return (
-      <img src={photos[index%photos.length].src} key={key} alt="sasad"/> 
-    );
-    return (
-        <div key={key}/> 
-      );
-}
+// function slideRenderer(params) {
+//     const { index, key } = params;
+//     if(photos[index%photos.length])
+//     return (
+//       <img src={photos[index%photos.length].src} key={key} alt="sasad"/> 
+//     );
+//     return (
+//         <div key={key}/> 
+//       );
+// }
 
-const photos = [
-  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
+// const photos = [
+//   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
+//   { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
+//   { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
+//   { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
+//   { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
+//   { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
+//   { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
+//   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
+//   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
   
-]
+// ]
 
-function chunk (arr, len) {
-  var chunks = [],
-      i = 0,
-      n = arr.length;
-  while (i < n) {
-    chunks.push(arr.slice(i, i += len));
-  }
-  return chunks;
-}
+// function chunk (arr, len) {
+//   var chunks = [],
+//       i = 0,
+//       n = arr.length;
+//   while (i < n) {
+//     chunks.push(arr.slice(i, i += len));
+//   }
+//   return chunks;
+// }
 
 function findWithAttr(array, attr, value) {
   console.log('array', array, 'att', attr, 'value', value)
@@ -59,7 +59,7 @@ export default class Showroom extends Component {
     this.state = {
       width: -1,
       index: 0,
-      photos: chunk(photos, 8)  ,
+      // photos: chunk(photos, 8)  ,
       showOverlay: 0,
       indexOverlay:0,
       imageViewSelected: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
@@ -69,7 +69,18 @@ export default class Showroom extends Component {
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
     this.switchOverlay = this.switchOverlay.bind(this);
     this.changeImageViewSelected = this.changeImageViewSelected.bind(this);
+    this.slideRenderer = this.slideRenderer.bind(this);
 
+  }
+  slideRenderer(params) {
+    const { index, key } = params;
+    if(this.props.showroomPhotosSet[index%this.props.showroomPhotosSet.length])
+    return (
+      <img src={this.props.showroomPhotosSet[index%this.props.showroomPhotosSet.length].src} key={key} alt="sasad"/> 
+    );
+    return (
+        <div key={key}/> 
+      );
   }
   handleChange = (event, value) => {
     this.setState({
@@ -101,7 +112,7 @@ export default class Showroom extends Component {
   }
   handleChangeIndex = indexOverlay => {
     if(indexOverlay<0){
-      indexOverlay = photos.length + indexOverlay;
+      indexOverlay = this.props.showroomPhotosSet.length + indexOverlay;
     }
     this.setState({
       indexOverlay,
@@ -118,6 +129,7 @@ export default class Showroom extends Component {
     
 	render() {
     const width = this.state.width;
+    if(this.props.photos && this.props.photos.length > 0)
 		return (
 			<div id="Showroom" >
         
@@ -126,7 +138,7 @@ export default class Showroom extends Component {
 
         <SwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex} enableMouseEvents>
 
-          {this.state.photos.map((page,i)=>{
+          {this.props.photos.map((page,i)=>{
             return <div className="Gallery" key={"page"+i} >
                       <Measure  bounds onResize={(contentRect) => this.setState({ width: contentRect.bounds.width })}>
                         {
@@ -153,7 +165,7 @@ export default class Showroom extends Component {
 
                                         // console.log(document.getElementById('Showroom').scrollTop + document.getElementById('Showroom').getBoundingClientRect().top ) 
                                         // window.onscroll = function () { window.scrollTo(0, document.getElementById('Showroom').scrollTop + document.getElementById('Showroom').getBoundingClientRect().top); };
-                                        this.switchOverlay(findWithAttr(photos, 'src',e.target.src));
+                                        this.switchOverlay(findWithAttr(this.props.showroomPhotosSet, 'src',e.target.src));
                                       }}
                                       key={page[0].src} 
                                       photos= {page} 
@@ -168,10 +180,10 @@ export default class Showroom extends Component {
         </SwipeableViews>
         <div className="pagination">
           <div style={this.state.index >0 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index-1)}>‹</div>
-          {this.state.photos.map((page,i)=>{
+          {this.props.photos.map((page,i)=>{
             return <div key={"photos"+i} className={this.state.index===i? "selected":""} onClick={(e)=>this.handleChange(e,i)}>{i+1}</div>
           })}
-          <div style={this.state.index <this.state.photos.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index+1)}>›</div>
+          <div style={this.state.index <this.props.photos.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index+1)}>›</div>
         </div>
 
 
@@ -183,30 +195,32 @@ export default class Showroom extends Component {
                         document.body.style.overflow="auto";
                     }}></span>
 
-                    <img className="blurred-image" src={photos[this.state.indexOverlay%photos.length].src} alt="asasf"/>
+                    <img className="blurred-image" src={this.props.showroomPhotosSet[this.state.indexOverlay%this.props.showroomPhotosSet.length].src} alt="asasf"/>
                     <div className="selected-image">
                     <VirtualizeSwipeableViews
                         index={this.state.indexOverlay}
                         onChangeIndex={this.handleChangeIndex}
-                        slideRenderer={slideRenderer}
+                        slideRenderer={this.slideRenderer}
                         enableMouseEvents
                         />
                     </div>
                 </div>
                 }
                 <div className="photos-slider">
-                    {photos && photos.map((photo,i)=><img onClick={()=>{
+                    {this.props.showroomPhotosSet && this.props.showroomPhotosSet.map((photo,i)=><img onClick={()=>{
 
                         this.changeImageViewSelected(photo.src)
                         this.setState({
                           indexOverlay: i
                         })
                     }
-                    }className={(photos[this.state.indexOverlay%photos.length].src === photo.src )?("photos-slider-img selected"):("photos-slider-img")} src={photo.src} alt="asjfnaskjfn" key={"photpos"+ i }/>)}
+                    }className={(this.props.showroomPhotosSet[this.state.indexOverlay%this.props.showroomPhotosSet.length].src === photo.src )?("photos-slider-img selected"):("photos-slider-img")} src={photo.src} alt="asjfnaskjfn" key={"photpos"+ i }/>)}
                 </div>
             </div>
 			</div>
-		);
+    );
+    else 
+    return(<div/>)
 	}
 }
 

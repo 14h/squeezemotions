@@ -45,6 +45,7 @@ export default class CreativeProducer extends Component {
                         <div className="producer-text"  style={{
                             // color: currentProducer.themeColor
                         }}>
+
                             
                             {currentProducer.text}
                         </div>
@@ -84,6 +85,7 @@ export default class CreativeProducer extends Component {
             letterSpacing: '1em',
             paddingLeft: '1em', // to compensate for letter spacing
         };
+        if (this.props.Producers && this.props.Producers.length>0 )
         return (
             <div id="CreativeProducer" >
 
@@ -91,7 +93,7 @@ export default class CreativeProducer extends Component {
                 <div className="cp-pagination">
                     {/* <div style={this.state.indexProducers >0 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChangeIndex(this.state.indexProducers-1)}>‹</div> */}
                     {/* <div style={this.state.indexProducers <Producers.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChangeIndex(this.state.indexProducers+1)}>›</div> */}
-                    {this.props.Producers.map((page,i)=>{
+                    { this.props.Producers.map((page,i)=>{
                     return <div key={"Producers"+i} className={this.state.indexProducers===i? "selected":""} onClick={(e)=>this.handleChangeIndex(i)}>{page.thing}</div>
                     })}
                     
@@ -110,6 +112,8 @@ export default class CreativeProducer extends Component {
             </div>
 
         );
+        else
+        return (<div/>)
       }
   }
   

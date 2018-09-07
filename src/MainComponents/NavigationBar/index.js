@@ -70,11 +70,16 @@ export default class NavigationBar extends Component {
 	componentDidMount(){
 		let prevScrollpos = window.pageYOffset;
 		window.onscroll = () => {
+
 		let currentScrollPos = window.pageYOffset;
-		if (prevScrollpos > currentScrollPos) {
+		// console.log(currentScrollPos )
+		if (prevScrollpos > currentScrollPos  ) {
 			document.getElementById("Main-NavigationBar-component").style.top = "0";
 		} else {
 			document.getElementById("Main-NavigationBar-component").style.top = "-50px";
+		}
+		if(currentScrollPos < 1){
+			document.getElementById("Main-NavigationBar-component").style.top = "0";
 		}
 		prevScrollpos = currentScrollPos;
 		}
