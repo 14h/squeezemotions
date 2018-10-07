@@ -128,7 +128,8 @@
     /* background: #eee; */
     width: 269px;
     margin: 3px;
-    border-radius: 5%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.15);
     align-self: stretch;
     background: #FFF;
     

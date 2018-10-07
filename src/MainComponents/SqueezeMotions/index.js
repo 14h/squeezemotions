@@ -16,7 +16,11 @@ import Photografie from '../../Photografie';
 import CreativeProducer from '../../CreativeProducer';
 import InstagramFeed from '../InstagramFeed';
 import NewKontakt from '../NewKontakt'
-import BlogView from '../BlogView';
+import Carousel from 'nuka-carousel';
+
+import TransitionGroup from "react-transition-group/TransitionGroup";
+
+// import BlogView from '../BlogView';
 // import MultimediaGallery from '../../MultimediaGallery';
 import './index.css';
 
@@ -233,17 +237,75 @@ export default class SqueezeMotions extends Component {
 					<Blog />
 				</div>
 			)} />
-			<Route exact path="/blog/:blogId" component={ (params) => (
+			{/* <Route exact path="/blog/:blogId" component={ (params) => (
 				<div>
 					<NavigationBar wedding={false} selectedNav="blog"/>
 					<BlogView selectedBlog={params.match.params.blogId} />
 				</div>
-			)} />
+			)} /> */}
 			{/* <Route exact path="/gallery" component={ () => (<MultimediaGallery />)} /> */}
 			<Route exact path="/creativeproducer" component={ () => (
 				<div>
 					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
 					<CreativeProducer  Producers={this.state.creativeProducers||{}}/>
+				</div>
+			)} />
+			<Route exact path="/carousel" component={ () => (
+				<div>
+					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
+					<Carousel 
+						renderBottomCenterControls={({ currentSlide }) => (
+							// <div>Slide: {currentSlide}</div>
+							<div/>
+						)}
+						renderTopCenterControls={({ currentSlide }) => (
+							// <div>Slide: {currentSlide}</div>
+							<div/>
+						)}
+						renderCenterLeftControls={({ previousSlide }) => (
+							<div onClick={previousSlide} className="back-button">
+							<div className="arrow-wrap">
+								<span className="arrow-part-1"></span>
+								<span className="arrow-part-2"></span>
+								<span className="arrow-part-3"></span>
+							</div>
+							</div>
+						)}
+						renderCenterRightControls={({ nextSlide }) => (
+							<div onClick={nextSlide} className="next-button">
+							<div className="arrow-wrap">
+								<span className="arrow-part-1"></span>
+								<span className="arrow-part-2"></span>
+								<span className="arrow-part-3"></span>
+							</div>
+							</div>
+							
+						)}
+						edgeEasing="easeCircleOut"
+						heightMode="max"
+						slidesToShow={2}
+						wrapAround={false}
+						cellSpacing={ 10 }
+						autoplay={true}
+						autoplayInterval={2000}
+						pauseOnHover={true}
+						vertical={true}
+						withoutControls={false}
+            		>
+					<Logo wedding={false}/>
+				<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
+
+					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
+				
+					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons||{}} addPerson={this.addPerson} removePerson={this.removePerson}/>
+
+
+					<InstagramFeed instagramAccessToken={this.state.instagramAccessToken} />
+
+
+
+					
+					</Carousel>
 				</div>
 			)} />
 			<Route exact path="/photografie" component={ () => (

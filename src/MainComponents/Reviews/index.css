@@ -142,7 +142,8 @@
     background: #FFF;
     border-radius: 10px;
     color: #045b10;
-    border: solid;
+    /* border: solid; */
+    box-shadow: 0px 0px 18px 0px rgba(2, 119, 2, 0.85);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -160,4 +161,10 @@
 }
 .wedding.parallax{
     background-image: url("https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.slider-slide{
+    display: flex!important;
+    flex-direction: row;
+    justify-content: center;
 }

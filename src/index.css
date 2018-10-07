@@ -8,9 +8,9 @@ html{
   overflow-x: hidden;
 }
 a,h1,h2,h3,h4,h5,h6,p,span{
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Oswald', sans-serif; */
+  /* font-family: 'Poiret One', cursive; */
 }
 
 /* body { 

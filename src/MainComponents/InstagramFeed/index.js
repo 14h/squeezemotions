@@ -39,6 +39,7 @@ export default class InstagramFeed extends Component {
             if (err !== null) {
               console.log('Something went wrong: ' + err);
             } else {
+                console.log(data)
               currentComponent.setState({
                 data: data.data
               })
