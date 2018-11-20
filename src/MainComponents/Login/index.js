@@ -13,7 +13,7 @@ export default class Login extends Component {
 	render() {
 		return (
 				<div id="Login">
-				{console.log(hash("SqueezeMotions","4056024096"))}	
+				{/* {console.log(hash("SqueezeMotions","4056024096"))}	 */}
 				<input type="password" id="password" name="password" placeholder="SqueezeMotions" />
 					{/* <button onClick={this.props.switchAdmin}> Switch Admin</button> */}
 					<button onClick={()=>{

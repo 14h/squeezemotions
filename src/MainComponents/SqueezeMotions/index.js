@@ -1,37 +1,19 @@
-
-import React, { Component } from 'react';
+import './index.css';
+import React, { Component, lazy, Suspense} from 'react';
 import { Route } from 'react-router';
-import Kontakt from '../Kontakt';
-import NavigationBar from '../NavigationBar';
+import NavigationBar  from '../NavigationBar';
+import Carousel from 'nuka-carousel';
 import About from '../About';
 import WeddingAbout from '../WeddingAbout'
-import Blog from '../Blog';
 import Logo from '../Logo';
 import Showroom from '../Showroom';
 import Reviews from '../Reviews';
-// import Login from '../Login';
 import Ballroom from '../Ballroom';
-import LazyLoad from 'react-lazyload';
 import Photografie from '../../Photografie';
 import CreativeProducer from '../../CreativeProducer';
+import SQZM from '../SQZM';
 import InstagramFeed from '../InstagramFeed';
-import NewKontakt from '../NewKontakt'
-import Carousel from 'nuka-carousel';
-
-import TransitionGroup from "react-transition-group/TransitionGroup";
-
-// import BlogView from '../BlogView';
-// import MultimediaGallery from '../../MultimediaGallery';
-import './index.css';
-
-// const persons = Object.values(SqueezeMotionsData.hinterDenKulissen);
-// const weddingReviews = Object.values(SqueezeMotionsData.weddingReviews);
-// const mainReviews = Object.values(SqueezeMotionsData.mainReviews);
-// const photografieArticles = Object.values(SqueezeMotionsData.photografieArticles);
-// const videografieArticles = Object.values(SqueezeMotionsData.videografieArticles);
-// const creativeProducers = Object.values(SqueezeMotionsData.creativeproducers);
-// const SQZM = Object.values(SqueezeMotionsData.SQZM);
-
+import Kontakt from '../Kontakt';
 
 function chunk (arr, len) {
   var chunks = [],
@@ -50,8 +32,6 @@ export default class SqueezeMotions extends Component {
 			selected: 1,
 			admin: false,
 			imageViewSelected: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-			// reviews: mainReviews,
-			// persons : persons,
 			overlayHeight:'300px',
 			overlayWidth:'0px'
 		};
@@ -66,9 +46,6 @@ export default class SqueezeMotions extends Component {
 		// Reviews
 		this.addReview = this.addReview.bind(this);
         this.deleteReview = this.deleteReview.bind(this);
-		
-		
-		
 		
 		this.getJSONData = this.getJSONData.bind(this);
 	}
@@ -108,7 +85,6 @@ export default class SqueezeMotions extends Component {
 					ShowroomPhotosSet : Object.values(data.Main.Showroom),
 					instagramAccessToken: data.Main.instagramAccessToken
 			  })
-	
 			}
 		  });
 	}
@@ -204,22 +180,14 @@ export default class SqueezeMotions extends Component {
         });
 	}
 	componentWillMount(){
-		this.getJSONData()
+		this.getJSONData();
 	}
 	
-
-
 	render() {
-		// var obj = photos.reduce(function(acc, cur, i) {
-		// 	acc[i] = cur;
-		// 	return acc;
-		//   }, {});
-		// console.log(JSON.stringify(obj))
-		// console.log(Object.values(SqueezeMotionsData.creativeproducers))
 		return (
-			<div>
+			<div>		
 			<Route exact path="/wedding" component={ () => (<div>
-				<NavigationBar wedding={true} />
+				<NavigationBar autohide={true} wedding={true} />
 				<Logo wedding={true}/>
 				<Ballroom />
 				{/* <About /> */}
@@ -227,32 +195,20 @@ export default class SqueezeMotions extends Component {
 				<WeddingAbout /> 
 				
 				{/* <Kontakt wedding={true}/> */}
-				<NewKontakt wedding={true}/>
+				{/* <NewKontakt wedding={true}/> */}
+				<Kontakt wedding={true}/>
 			</div>)} />
 			{/* <Route  path="/admin" component={ () => (<Login switchAdmin={this.switchAdmin} />)} /> */}
-
-			<Route exact path="/blog" component={ () => (
-				<div>
-					<NavigationBar wedding={false} selectedNav="blog"/>
-					<Blog />
-				</div>
-			)} />
-			{/* <Route exact path="/blog/:blogId" component={ (params) => (
-				<div>
-					<NavigationBar wedding={false} selectedNav="blog"/>
-					<BlogView selectedBlog={params.match.params.blogId} />
-				</div>
-			)} /> */}
-			{/* <Route exact path="/gallery" component={ () => (<MultimediaGallery />)} /> */}
 			<Route exact path="/creativeproducer" component={ () => (
 				<div>
-					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
+					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
 					<CreativeProducer  Producers={this.state.creativeProducers||{}}/>
+					<Kontakt wedding={false}/>
 				</div>
 			)} />
 			<Route exact path="/carousel" component={ () => (
 				<div>
-					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
+					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
 					<Carousel 
 						renderBottomCenterControls={({ currentSlide }) => (
 							// <div>Slide: {currentSlide}</div>
@@ -293,14 +249,14 @@ export default class SqueezeMotions extends Component {
 						withoutControls={false}
             		>
 					<Logo wedding={false}/>
-				<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
+					{/* <Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/> */}
 
-					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
+					{/* <Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/> */}
 				
 					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons||{}} addPerson={this.addPerson} removePerson={this.removePerson}/>
 
 
-					<InstagramFeed instagramAccessToken={this.state.instagramAccessToken} />
+					{/* <InstagramFeed instagramAccessToken={this.state.instagramAccessToken} /> */}
 
 
 
@@ -310,41 +266,171 @@ export default class SqueezeMotions extends Component {
 			)} />
 			<Route exact path="/photografie" component={ () => (
 				<div>
-					<NavigationBar wedding={false} selectedNav="photografie"/>
+					<NavigationBar autohide={true} wedding={false} selectedNav="photografie"/>
 					<Photografie  articles={this.state.photografieArticles||{}}/>
+					<Kontakt wedding={false}/>
 				</div>
 			)} />
 			<Route exact path="/videografie" component={ () => (
 				<div>
-					<NavigationBar wedding={false} selectedNav="videografie"/>
+					<NavigationBar autohide={true} wedding={false} selectedNav="videografie"/>
 					<Photografie video={true} articles={this.state.videografieArticles||{}}/>
+					<Kontakt wedding={false}/>
 				</div>
 			)} />
 			<Route exact path="/sqzm" component={ () => (
 				<div>
-					<NavigationBar wedding={false} selectedNav="creativeproducer"/>
-					<CreativeProducer  Producers={this.state.SQZM||{}}/>
+					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
+					<SQZM  Producers={this.state.SQZM||{}}/>
+					<Kontakt wedding={false}/>
 				</div>
 			)} />
 			
 			<Route  exact path="/" component={ () => (<div>
-				<NavigationBar wedding={false}/>
-				<Logo wedding={false}/>
-				<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
-				<LazyLoad height={500} once offset={[900, 0]} >
+				<NavigationBar autohide={true} wedding={false}/>
+					<Logo SqueezeMotionsData={this.state.SqueezeMotionsData} wedding={false}/>
+				{this.state.SqueezeMotionsData && <div>
+					<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
 					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
-				</ LazyLoad>	
-				<LazyLoad height={500} once offset={[900, 0]} >
 					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons||{}} addPerson={this.addPerson} removePerson={this.removePerson}/>
-				</ LazyLoad>
-				<LazyLoad height={500} once placeholder={<div/>} offset={[900, 0]} >
 					<InstagramFeed instagramAccessToken={this.state.instagramAccessToken} />
-				</ LazyLoad>
-				{/* <Kontakt wedding={false}/> */}
-				<NewKontakt wedding={false}/>
+				</div>}
+
+				
+				
+				
+				<Kontakt wedding={false}/>
+				{/* <NewKontakt wedding={false}/> */}
 			</div>)} />
 			</div>
 			
 		);
 	}
 }
+
+
+// <Route exact path="/wedding" component={ () => (<div>
+// 				<NavigationBar autohide={true} wedding={true} />
+// 				<Logo wedding={true}/>
+// 				<Ballroom />
+// 				{/* <About /> */}
+// 				<Reviews wedding={true} admin={this.state.admin} reviews={this.state.weddingReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
+// 				<WeddingAbout /> 
+				
+// 				{/* <Kontakt wedding={true}/> */}
+// 				<NewKontakt wedding={true}/>
+// 			</div>)} />
+// 			{/* <Route  path="/admin" component={ () => (<Login switchAdmin={this.switchAdmin} />)} /> */}
+
+// 			<Route exact path="/blog" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="blog"/>
+// 					<Blog />
+// 				</div>
+// 			)} />
+// 			{/* <Route exact path="/blog/:blogId" component={ (params) => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="blog"/>
+// 					<BlogView selectedBlog={params.match.params.blogId} />
+// 				</div>
+// 			)} /> */}
+// 			{/* <Route exact path="/gallery" component={ () => (<MultimediaGallery />)} /> */}
+// 			<Route exact path="/creativeproducer" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
+// 					<CreativeProducer  Producers={this.state.creativeProducers||{}}/>
+// 				</div>
+// 			)} />
+// 			<Route exact path="/carousel" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
+// 					<Carousel 
+// 						renderBottomCenterControls={({ currentSlide }) => (
+// 							// <div>Slide: {currentSlide}</div>
+// 							<div/>
+// 						)}
+// 						renderTopCenterControls={({ currentSlide }) => (
+// 							// <div>Slide: {currentSlide}</div>
+// 							<div/>
+// 						)}
+// 						renderCenterLeftControls={({ previousSlide }) => (
+// 							<div onClick={previousSlide} className="back-button">
+// 							<div className="arrow-wrap">
+// 								<span className="arrow-part-1"></span>
+// 								<span className="arrow-part-2"></span>
+// 								<span className="arrow-part-3"></span>
+// 							</div>
+// 							</div>
+// 						)}
+// 						renderCenterRightControls={({ nextSlide }) => (
+// 							<div onClick={nextSlide} className="next-button">
+// 							<div className="arrow-wrap">
+// 								<span className="arrow-part-1"></span>
+// 								<span className="arrow-part-2"></span>
+// 								<span className="arrow-part-3"></span>
+// 							</div>
+// 							</div>
+							
+// 						)}
+// 						edgeEasing="easeCircleOut"
+// 						heightMode="max"
+// 						slidesToShow={2}
+// 						wrapAround={false}
+// 						cellSpacing={ 10 }
+// 						autoplay={true}
+// 						autoplayInterval={2000}
+// 						pauseOnHover={true}
+// 						vertical={true}
+// 						withoutControls={false}
+//             		>
+// 					<Logo wedding={false}/>
+// 				<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
+
+// 					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
+				
+// 					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons||{}} addPerson={this.addPerson} removePerson={this.removePerson}/>
+
+
+// 					<InstagramFeed instagramAccessToken={this.state.instagramAccessToken} />
+
+
+
+					
+// 					</Carousel>
+// 				</div>
+// 			)} />
+// 			<Route exact path="/photografie" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="photografie"/>
+// 					<Photografie  articles={this.state.photografieArticles||{}}/>
+// 				</div>
+// 			)} />
+// 			<Route exact path="/videografie" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="videografie"/>
+// 					<Photografie video={true} articles={this.state.videografieArticles||{}}/>
+// 				</div>
+// 			)} />
+// 			<Route exact path="/sqzm" component={ () => (
+// 				<div>
+// 					<NavigationBar autohide={true} wedding={false} selectedNav="creativeproducer"/>
+// 					<CreativeProducer  Producers={this.state.SQZM||{}}/>
+// 				</div>
+// 			)} />
+			
+// 			<Route  exact path="/" component={ () => (<div>
+// 				<NavigationBar autohide={true} wedding={false}/>
+// 				<Logo wedding={false}/>
+// 				<Showroom showroomPhotosSet={this.state.ShowroomPhotosSet} photos={this.state.ShowroomPhotos} admin={this.state.admin} changeImageViewSelected={this.changeImageViewSelected}/>
+// 				<LazyLoad height={500} once offset={[900, 0]} >
+// 					<Reviews wedding={false} admin={this.state.admin} reviews={this.state.mainReviews||{}} addReview={this.addReview} deleteReview={this.deleteReview}/>
+// 				</ LazyLoad>	
+// 				<LazyLoad height={500} once offset={[900, 0]} >
+// 					<About  wedding={false}  admin={this.state.admin} persons={this.state.persons||{}} addPerson={this.addPerson} removePerson={this.removePerson}/>
+// 				</ LazyLoad>
+// 				<LazyLoad height={500} once placeholder={<div/>} offset={[900, 0]} >
+// 					<InstagramFeed instagramAccessToken={this.state.instagramAccessToken} />
+// 				</ LazyLoad>
+// 				{/* <Kontakt wedding={false}/> */}
+// 				<NewKontakt wedding={false}/>
+// 			</div>)} />

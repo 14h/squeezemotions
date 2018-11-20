@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './index.css';
 // import {Link} from 'react-router-dom';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+// import SwipeableViews from 'react-swipeable-views';
+// import { autoPlay } from 'react-swipeable-views-utils';
 
 
 import Carousel from 'nuka-carousel';
 import Measure from 'react-measure';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// import QueueAnim from 'rc-queue-anim';
+// import TweenOne from 'rc-tween-one';
+// import ScrollAnim from 'rc-scroll-anim';
+
+
+// const  ScrollOverPack = ScrollAnim.OverPack;
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 
 
@@ -35,19 +41,19 @@ export default class Reviews extends Component {
         this.setState({reviewInstagramLink:e.target.value})
     }
 	render() {
-        function chunk (arr, len) {
+        // function chunk (arr, len) {
 
-            var chunks = [],
-                i = 0,
-                n = arr.length;
+        //     var chunks = [],
+        //         i = 0,
+        //         n = arr.length;
           
-            while (i < n) {
-              chunks.push(arr.slice(i, i += len));
-            }
+        //     while (i < n) {
+        //       chunks.push(arr.slice(i, i += len));
+        //     }
           
-            return chunks;
-          }
-        let reviewsChunks = chunk(this.props.reviews,3);
+        //     return chunks;
+        //   }
+        // let reviewsChunks = chunk(this.props.reviews,3);
         let width = this.state.width;
 		return (
 			<div className={this.props.wedding? ("parallax Reviews wedding"):("parallax Reviews ")}>
@@ -84,22 +90,35 @@ export default class Reviews extends Component {
               renderCenterLeftControls={({ previousSlide }) => (
                 <div onClick={previousSlide} className="back-button">
                   <div className="arrow-wrap">
-                    <span className="arrow-part-1"></span>
-                    <span className="arrow-part-2"></span>
-                    <span className="arrow-part-3"></span>
+                    <span style={{
+                        color:    "#FFF",
+                        cursor:   "pointer",
+                        fontSize: "11px"
+                    }}>PREV</span>
                   </div>
                 </div>
               )}
               renderCenterRightControls={({ nextSlide }) => (
-                <div onClick={nextSlide} className="next-button">
+                <div onClick={nextSlide} className="back-button">
                   <div className="arrow-wrap">
-                    <span className="arrow-part-1"></span>
-                    <span className="arrow-part-2"></span>
-                    <span className="arrow-part-3"></span>
+                    <span style={{
+                        color:    "#FFF",
+                        cursor:   "pointer",
+                        fontSize: "11px"
+                    }}>NEXT</span>
                   </div>
                 </div>
-                
               )}
+            //   renderCenterRightControls={({ nextSlide }) => (
+            //     <div onClick={nextSlide} className="next-button">
+            //       <div className="arrow-wrap">
+            //         <span className="arrow-part-1"></span>
+            //         <span className="arrow-part-2"></span>
+            //         <span className="arrow-part-3"></span>
+            //       </div>
+            //     </div>
+                
+            //   )}
               edgeEasing="easeCircleOut"
               heightMode="first"
               slidesToShow={columns}
@@ -107,7 +126,7 @@ export default class Reviews extends Component {
               cellSpacing={ 10 }
               autoplay={true}
               autoplayInterval={2000}
-              pauseOnHover={false}
+              pauseOnHover={true}
               vertical={false}
               withoutControls={false}
             >

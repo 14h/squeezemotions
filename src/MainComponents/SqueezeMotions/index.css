@@ -19,10 +19,10 @@
     color: #045b10;
     font-size: 50px;
     font-weight: bold;
-    font-family: 'Oswald', sans-serif;
     padding-top: 20px;
     padding-bottom: 10px;
-    font-family: 'Poiret One', cursive;
+    /* font-family: 'Poiret One', cursive; */
+    font-family: 'Lato', sans-serif;
 }
 .white-border{
     width: 60px;
@@ -91,4 +91,10 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (max-width:1000px){
+    .section-header {
+        font-size: 35px;
+    }
 }

@@ -44,7 +44,7 @@ const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
 // }
 
 function findWithAttr(array, attr, value) {
-  console.log('array', array, 'att', attr, 'value', value)
+
   for(var i = 0; i < array.length; i += 1) {
       if(array[i][attr] === value) {
           return i;
@@ -100,7 +100,7 @@ export default class Showroom extends Component {
 
   }
   switchOverlay(i){
-    console.log(i)
+
     if(this.state.showOverlay === 1){
       this.setState({showOverlay: 0})
     }else{
@@ -123,7 +123,7 @@ export default class Showroom extends Component {
     
   changeImageViewSelected(newImageViewSelected){
       this.setState({imageViewSelected: newImageViewSelected});
-      console.log(this.props.index)
+
   }
   
     

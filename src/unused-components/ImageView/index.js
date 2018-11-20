@@ -54,13 +54,11 @@ export default class ImageView extends Component {
         this.setState({
           index,
         });
-        // console.log(index)
     };
     
       
     changeImageViewSelected(newImageViewSelected){
         this.setState({imageViewSelected: newImageViewSelected});
-        console.log(this.props.index)
 	}
 
     

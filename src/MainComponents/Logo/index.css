@@ -4,6 +4,7 @@
     top: 89vh;
     font-size: 20px;
     color: #000;
+    color: #314659;
     -webkit-animation: bounce 1s infinite;
     animation: bounce 1s infinite;
 }
@@ -35,26 +36,24 @@
 }
 .Main-Logo{
     height: 95vh;
-
     width: 100%;
     display: flex;
-
     margin: 0px;
     justify-content: space-around;
-    background: #eee;
-   
     align-items: center;
-    background: rgb(238,238,238);
-    background: radial-gradient(circle, rgb(182, 182, 182) 0%, rgba(218, 213, 213, 0.828) 50%, rgb(242, 242, 242) 100%);
+    background: radial-gradient(circle, rgb(192, 192, 192) 0%, rgba(0, 56, 19, 0.37) 50%, rgb(242, 242, 242) 100%);
+    /* background-position:50% 40%;
+    background-size: 100% 100%;
+    animation: MainBackgroundAnimation 5s ease infinite;
+    animation-delay: 2s; */
 
 }
 .Wedding-Logo{
     background: linear-gradient(133deg, #bfa568, #000000, #bfa568);
     background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 7s ease infinite;
-    -moz-animation: AnimationName 7s ease infinite;
-    animation: AnimationName 7s ease infinite;
+    -webkit-animation: WeddingBackgroundAnimation 7s ease infinite;
+    -moz-animation: WeddingBackgroundAnimation 7s ease infinite;
+    animation: WeddingBackgroundAnimation 7s ease infinite;
 }
 .ja-message{
     position: absolute;
@@ -62,7 +61,7 @@
 }
 .Wedding-Logo .ja-message{
     display: block;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lato', sans-serif;
     font-size: 50px;
     text-align: center;
     position: absolute;
@@ -70,29 +69,54 @@
     top: 80vh;
     color: #fff;
 }
-@-webkit-keyframes AnimationName {
+
+@-webkit-keyframes WeddingBackgroundAnimation {
     0%{background-position:0% 43%}
     50%{background-position:100% 58%}
     100%{background-position:0% 43%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes WeddingBackgroundAnimation {
     0%{background-position:0% 43%}
     50%{background-position:100% 58%}
     100%{background-position:0% 43%}
 }
-@keyframes AnimationName { 
+@keyframes WeddingBackgroundAnimation { 
     0%{background-position:0% 43%}
     50%{background-position:100% 58%}
     100%{background-position:0% 43%}
 }
+@-webkit-keyframes MainBackgroundAnimation {
+    0%{background-position:50% 80%;background-size: 100% 100%;}
+    25%{background-position:center;background-size: 200% 200%;}
+    50%{background-position:50% 80%;background-size: 300% 300%;}
+    75%{background-position:50% 80%;background-size: 150% 150%;}
+    100%{background-position:center;background-size: 100% 100%;}
+}
+@-moz-keyframes MainBackgroundAnimation {
+    0%{background-position:50% 80%;background-size: 100% 100%;}
+    25%{background-position:center;background-size: 200% 200%;}
+    50%{background-position:50% 80%;background-size: 300% 300%;}
+    75%{background-position:50% 80%;background-size: 150% 150%;}
+    100%{background-position:center;background-size: 100% 100%;}
+}
+@keyframes MainBackgroundAnimation { 
+    0%{background-position:50% 80%;background-size: 100% 100%;}
+    25%{background-position:center;background-size: 200% 200%;}
+    50%{background-position:50% 80%;background-size: 300% 300%;}
+    75%{background-position:50% 80%;background-size: 150% 150%;}
+    100%{background-position:center;background-size: 100% 100%;}
+}
+
 /* LINKS MAIN */
 a.shorties-link {
     color: #000;
+    color: #314659;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
 a.shorties-link:link {
     color: #000;
+    color: #314659;
     text-decoration: none;
 }
 a.shorties-link:hover {
@@ -135,6 +159,7 @@ a.shorties-link:visited {
 }
 .shorties{
     color: #000;
+    color: #314659;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -161,14 +186,16 @@ a.shorties-link:visited {
     top: 75vh; */
 }
 .shorties-top{
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    font-family: 'Poiret One', cursive;
+
+    /* font-weight: bold; */
+    font-size: 21px;
+
+    /* font-family: 'Poiret One', cursive; */
+    font-family: 'Lato', sans-serif;
     max-width: 130px;
 }
 .shorties-bottom{
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lato', sans-serif;
     font-size: 28px;
 }
 @media screen and (max-width: 1000px){
@@ -198,7 +225,8 @@ a.shorties-link:visited {
         /* font-size: 28px; */
     }
     .shorties-bottom{
-        font-family: 'Dancing Script', cursive;
+        /* font-family: 'Dancing Script', cursive; */
+        font-family: 'Lato', sans-serif;
         font-size: 20px;
     }
     .main-svg{

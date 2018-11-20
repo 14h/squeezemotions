@@ -1,3 +1,4 @@
+
 .last-message{
     display: flex;
     flex-direction: row;
@@ -100,18 +101,22 @@
 .instagram-post-link:link{
     text-decoration: none;
     color: #000;
+    color: #314659;
 }
 .instagram-post-link:visited{
     text-decoration: none;
     color: #000;
+    color: #314659;
 }
 .instagram-post-link:hover{
     text-decoration: none;
     color: #000;
+    color: #314659;
 }
 .instagram-post-link:active{
     text-decoration: none;
     color: #000;
+    color: #314659;
 }
 .feed-header{
     text-align: center;
@@ -191,4 +196,10 @@
 }
 .profile-pic{
     align-self: auto;
+}
+.instagram-page{
+    background: #FFF;
+}
+.instagram-page:hover{
+    background: #0000004b;
 }

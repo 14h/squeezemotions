@@ -122,7 +122,6 @@ export default class Gallery extends Component {
 			
       // <Document title="Gallery | ReactPhotoswipe" className="page-gallery">
         <div>
-					{console.log(this.state.images)}
 
           <div className="page-header">
             <h1>Photoswipe gallery</h1>

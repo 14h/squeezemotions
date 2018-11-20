@@ -101,7 +101,7 @@ export default class Ballroom extends Component {
 		this.setState({
 		  indexBallroom,
 		});
-		// console.log(index)
+
 	};
 	changeImageViewSelected(newImageViewSelected){
 		this.setState({imageViewSelected: newImageViewSelected});

@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
 import ReactRevealText from 'react-reveal-text';
-
 import './index.css';
 
-
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
-
-
-
-
-
 
 export default class CreativeProducer extends Component {
     constructor(props) {
@@ -42,26 +35,19 @@ export default class CreativeProducer extends Component {
                         }}>
                             {currentProducer.name}
                         </div>
-                        <div className="producer-text"  style={{
-                            // color: currentProducer.themeColor
-                        }}>
-
-                            
+                        <div className="producer-text">
                             {currentProducer.text}
                         </div>
                     </div>
                 
                 </div>
             </div>
-    
-    
         );
         return (
             <div key={key}/> 
           );
     }
     handleChangeIndex = indexProducers => {
-        // document.body.style.background = this.props.Producers[indexProducers].themeColor
       if(indexProducers<0){
         indexProducers = this.props.Producers.length + indexProducers;
       }
@@ -77,10 +63,9 @@ export default class CreativeProducer extends Component {
     
     render() {
         const textStyles = {
-            color: '#000',
+            color: '#314659',
             fontSize: '24px',
             lineHeight: '36px',
-            // fontFamily: "Poiret One",
             textAlign: 'center',
             letterSpacing: '1em',
             paddingLeft: '1em', // to compensate for letter spacing
@@ -88,17 +73,12 @@ export default class CreativeProducer extends Component {
         if (this.props.Producers && this.props.Producers.length>0 )
         return (
             <div id="CreativeProducer" >
-
                 <ReactRevealText show={this.state.show} text="WELCOME TO THE FUTURE" style={textStyles}/>
                 <div className="cp-pagination">
-                    {/* <div style={this.state.indexProducers >0 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChangeIndex(this.state.indexProducers-1)}>‹</div> */}
-                    {/* <div style={this.state.indexProducers <Producers.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChangeIndex(this.state.indexProducers+1)}>›</div> */}
-                    { this.props.Producers.map((page,i)=>{
-                    return <div key={"Producers"+i} className={this.state.indexProducers===i? "selected":""} onClick={(e)=>this.handleChangeIndex(i)}>{page.thing}</div>
-                    })}
-                    
+                    { 
+                        this.props.Producers.map((page,i)=><div key={"Producers"+i} className={this.state.indexProducers===i? "selected":""} onClick={(e)=>this.handleChangeIndex(i)}>{page.thing}</div>)
+                    }
                 </div>
-                
                 <div className={"producer-wrapper-background"} style={{
                     background: this.props.Producers[this.state.indexProducers%this.props.Producers.length].themeColor,
                     transition: "background-color 0.5s ease"
@@ -110,11 +90,8 @@ export default class CreativeProducer extends Component {
                         />
                 </div>
             </div>
-
         );
         else
         return (<div/>)
       }
   }
-  
-  

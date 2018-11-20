@@ -1,6 +1,6 @@
 // import Draggable from 'react-draggable'; // The default
 // import {DraggableCore} from 'react-draggable'; // <DraggableCore>
-import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
+import Draggable from 'react-draggable'; // Both at the same time
 
 
 import React, { Component } from 'react';
@@ -21,7 +21,6 @@ export default class Kontakt extends Component {
 	}
 
 	handleStop(event){
-		console.log(event)
 		// let Kontakt = document.getElementById('Kontakt');
 		// console.log(Kontakt.getBoundingClientRect() )
 		// Kontakt.getBoundingClientRect().top
