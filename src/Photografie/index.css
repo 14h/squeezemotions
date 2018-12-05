@@ -1,5 +1,5 @@
 .photografie{
-    padding-top: 70px;
+    padding-top: 58px;
 }
 
 .ytp-pause-overlay{
@@ -17,12 +17,13 @@
 .article{
     min-height: 500px;
     width: 100vw;
-    background: #eee;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: #F4F1EC;
+    background: #666;
+    color: #f5f5f9;
+    
 }
 .reversed{
     flex-direction: row-reverse;
@@ -48,7 +49,6 @@
     padding: 60px 30px 0;
     font-weight: 900;
     text-transform: uppercase;
-    color: #333;
     font-size: 23px;
     line-height: 22px;
     position: relative;
@@ -63,6 +63,7 @@
     line-height: 24px;
     font-family: 'Poiret One', cursive;
     text-align: center;
+    /* font-family: 'Lato', sans-serif; */
 }
 
 @media screen and (max-width:720px){

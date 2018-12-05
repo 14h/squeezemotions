@@ -20,12 +20,15 @@
   left: 0;
   height: 3.5vh;
   width: 97.5%;
+  
+}
+.Footer.closed:after {
+  
   border-top-left-radius: 30px;
   /* border-top-right-radius: 60px; */
   border-top: 0.5vh solid #53917c;
   border-left: 0.5vh solid #53917c;
   border-right: 0.5vh solid #53917c;
-
 }
 
 @media screen and (max-width: 1000px){

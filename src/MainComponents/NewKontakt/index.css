@@ -1,14 +1,14 @@
 .FooterIcon{
   border: 3px solid black;
   margin-top: -25px;
-  background: #fff;
+  background: #f5f5f9;
   margin-left: 10px;
 }
 .NewKontakt{
   border: 3px solid green;
   position: fixed;
   top: calc(100vh - 25px);
-  background: #FFF;
+  background: #f5f5f9;
   width: 100vw;
   z-index: 9999;
 }

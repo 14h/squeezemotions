@@ -53,8 +53,6 @@
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     font-family: 'Titillium Web', sans-serif;
-    /* font-size: 20px; */
-
 }
 .name-input{
     margin-top: 10px;
@@ -73,19 +71,15 @@
     height: 100%;
 }
 .Main-About {
-
-    background: rgb(240,240,240);
-    background: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(235,235,235,1) 50%, rgba(226,226,226,1) 100%);
-    padding-top: 40px
-    /* min-height: 95vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 40px; */
+    background: #f5f5f9;
+    /* background: linear-gradient(90deg, rgba(240,240,240,1) 0%, rgba(235,235,235,1) 50%, rgba(226,226,226,1) 100%); */
+    padding-top: 40px;
+    /* max-height: 750px; */
+    height: 95vh;
 }
 .Main-About  h1{
     text-align: center;
-    color: #FFF;
+    color: #f5f5f9;
     font-family: 'Titillium Web', sans-serif;
 }
 .Main-About .person-cover{
@@ -118,19 +112,18 @@
   .Main-About .person:hover .person-cover{
     animation: 1s fadeIn;
     animation-fill-mode: forwards;
-    /* visibility: visible; */
 }
 .Main-About .person:active .person-cover{
-    /* visibility: visible; */
     animation: 1s fadeIn;
     animation-fill-mode: forwards;
 }
 
 .Main-About .person{
     max-width: 450px;
-    /* filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.4)); */
+    
+}
+.shadow{
     filter: drop-shadow(0px 5px 5px rgba(2, 119, 2, 0.85));
-    /* box-shadow: 0px 0px 18px 0px rgba(2, 119, 2, 0.85); */
 }
 .Main-About .person-image{
     clip-path: circle(50%);
@@ -164,65 +157,22 @@
     width: 64%;
     margin-left: 18%;
     line-height: 10px;
-
 }
 
 .Main-About .persons {
-    
-
     justify-content: space-around;
     width: 100%;
     margin: 0 auto;
     padding-top: 20px;
     display: inline-flex;
     flex-wrap: wrap;
-
 }
 @media screen and ( max-width: 768px){
     .Main-About .person{
-        /* max-width: 375px;
-        max-height: 350px; */
         transform: scale(0.8);
         max-height: 450px;
     }
     .Main-About .person-cover{
         transform: translateY(-65%);
     }
-    /* .Main-About .person-cover{
-        transform: translateY(-80%);
-    }
-    .Main-About  h1{
-        margin-bottom: 0px;
-    }
-    
-    .Main-About .person-image{
-        clip-path: circle(50%);
-        width: 375px;
-        height: 375px;
-        background: #fff;
-
-    }
-    .Main-About .person-image-cut{
-
-    }
-    .Main-About .person-image img{
-        width: 50%;
-        height: 81%;
-        object-fit: contain;
-        margin-left: 25%;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-
-    }
-    .Main-About .person-description {
-
-    }
-
-    .Main-About .persons {
-        
-
-        margin: 0 auto;
-        padding-top: 20px;
-        transform: translateY(-20%) scale(0.7);
-    } */
 }

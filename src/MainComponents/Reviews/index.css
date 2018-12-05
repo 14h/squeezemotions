@@ -73,11 +73,11 @@
 
 .parallax { 
     background-image: url("https://images.pexels.com/photos/64687/pexels-photo-64687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    /* height: 100%; 
+    height: 100%; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     /* background: #010; */
 }
 .review  textarea {
@@ -104,8 +104,8 @@
 .Reviews{
     width: 100%;
     background-size: cover;
-    padding-top: 20px;
-    max-height: 300px;
+    padding-bottom: 20px;
+    max-height: 400px;
 }
 
 .reviews-list{
@@ -125,7 +125,7 @@
     width: 300px;
     margin: 10px;
     padding: 5px;
-    background: #FFF;
+    background: rgb(240,240,240);
     border-radius: 10px;
     color: #045b10;
     display: flex;
@@ -148,16 +148,4 @@
 }
 .wedding.parallax{
     background-image: url("https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-}
-
-.slider-slide{
-    display: flex!important;
-    flex-direction: row;
-    justify-content: center;
-}
-.slider-frame{
-    will-change: transform;
-}
-.slider-list{
-    will-change: transform;
 }

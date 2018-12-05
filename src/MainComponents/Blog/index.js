@@ -7,20 +7,11 @@ export default class Blog extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			selectedBlog: -1,
 			progress: 0
 		}
-		this.switchBlogOverlay = this.switchBlogOverlay.bind(this);
 		this.getBlogJSONData = this.getBlogJSONData.bind(this);
 		
 
-	}
-	switchBlogOverlay(selectedBlog){
-		if(selectedBlog > -1){
-			this.setState({selectedBlog:selectedBlog})
-		}else{
-			this.setState({selectedBlog:-1})
-		}
 	}
 	componentDidMount(){
 		this.getBlogJSONData();
@@ -58,7 +49,7 @@ export default class Blog extends Component {
 	render() {
 		return (
 			<div id="Blog">
-					{this.state.selectedBlog < 0 && this.state.blogData && <div className="blogs-container">
+					{ this.state.blogData && <div className="blogs-container">
 					{this.state.blogData && this.state.blogData.map((blog, i)=>{
 						const parser = new DOMParser();
 						const html = parser.parseFromString(blog.content, 'text/html');

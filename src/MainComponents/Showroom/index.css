@@ -1,34 +1,42 @@
 #Showroom{
-  /* height: 100vh; */
-  background: #EFEFEF;
+  background: #f5f5f9;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.Gallery img{
+  margin: 15px !important;
+  border: 5px green solid;
+}
 
 .pagination {
-  text-align: center;
+
   padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 .pagination a , .pagination div{
   font-family: "Open Sans";
   font-size: 1.08em;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   background-color: transparent;
   color: #222;
   border: 2px solid #ddd;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   border-radius: 50%;
   font-weight: 700;
-  margin: 4px;
   transition: all 0.2s linear;
+  margin: 2px;
 }
 .pagination a:hover, .pagination a.selected, .pagination div:hover, .pagination div.selected {
-  color: #fff;
+  color: #f5f5f9;
   background-color: #045b10;
   border-color: #045b10;
 }
@@ -203,7 +211,6 @@ img.selected {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* background: #eee; */
 }
 #ImageView-container svg{
   position: relative;

@@ -1,7 +1,7 @@
 .scroll-indicator {
     position: absolute;
-    left: 50%;
-    top: 89vh;
+    left: 49%;
+    top: 700px;
     font-size: 20px;
     color: #000;
     color: #314659;
@@ -10,24 +10,24 @@
 }
 @-webkit-keyframes bounce {
     0% {
-        top: 89vh;
+        top: 700px;
     }
     50% {
-        top: 91vh;
+        top: 710px;
     }
     100% {
-        top: 89vh;
+        top: 700px;
     }
 }
 @keyframes bounce {
     0% {
-        top: 89vh;
+        top: 700px;
     }
     50% {
-        top: 91vh;
+        top: 710px;
     }
     100% {
-        top: 89vh;
+        top: 700px;
     }
 }
 
@@ -35,17 +35,16 @@
     position: absolute;
 }
 .Main-Logo{
-    height: 95vh;
+    /* height: 95vh; */
+    height: 750px;
     width: 100%;
     display: flex;
     margin: 0px;
     justify-content: space-around;
     align-items: center;
-    background: radial-gradient(circle, rgb(192, 192, 192) 0%, rgba(0, 56, 19, 0.37) 50%, rgb(242, 242, 242) 100%);
-    /* background-position:50% 40%;
-    background-size: 100% 100%;
-    animation: MainBackgroundAnimation 5s ease infinite;
-    animation-delay: 2s; */
+    background-image: linear-gradient(to bottom, #f5f5f9, #e6e6e9, #d8d8da, #c9c9cb, #bbbbbc);
+    animation: MainBackgroundAnimation 5s ease 5s;
+    animation-delay: 2s;
 
 }
 .Wedding-Logo{
@@ -85,6 +84,14 @@
     50%{background-position:100% 58%}
     100%{background-position:0% 43%}
 }
+
+@keyframes MainBackgroundAnimation { 
+    0%{background-position:50% 80%;background-size: 100% 100%;}
+    25%{background-position:center;background-size: 200% 200%;}
+    50%{background-position:50% 80%;background-size: 300% 300%;}
+    75%{background-position:50% 80%;background-size: 150% 150%;}
+    100%{background-position:center;background-size: 100% 100%;}
+}
 @-webkit-keyframes MainBackgroundAnimation {
     0%{background-position:50% 80%;background-size: 100% 100%;}
     25%{background-position:center;background-size: 200% 200%;}
@@ -93,13 +100,6 @@
     100%{background-position:center;background-size: 100% 100%;}
 }
 @-moz-keyframes MainBackgroundAnimation {
-    0%{background-position:50% 80%;background-size: 100% 100%;}
-    25%{background-position:center;background-size: 200% 200%;}
-    50%{background-position:50% 80%;background-size: 300% 300%;}
-    75%{background-position:50% 80%;background-size: 150% 150%;}
-    100%{background-position:center;background-size: 100% 100%;}
-}
-@keyframes MainBackgroundAnimation { 
     0%{background-position:50% 80%;background-size: 100% 100%;}
     25%{background-position:center;background-size: 200% 200%;}
     50%{background-position:50% 80%;background-size: 300% 300%;}
@@ -135,10 +135,10 @@ a.shorties-link:visited {
 /* LINKS WEDDING */
 
 .wedding a.shorties-link {
-    color: #FFF;
+    color: #f5f5f9;
 }
 .wedding a.shorties-link:link {
-    color: #FFF;
+    color: #f5f5f9;
 }
 .wedding a.shorties-link:hover {
     color: #BFA568;
@@ -188,7 +188,7 @@ a.shorties-link:visited {
 .shorties-top{
 
     /* font-weight: bold; */
-    font-size: 21px;
+    font-size: 23px;
 
     /* font-family: 'Poiret One', cursive; */
     font-family: 'Lato', sans-serif;

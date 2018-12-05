@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import TweenOne from 'rc-tween-one';
-
-
 import './index.css';
 // import jeels from '../media/01.jpg';
 // import Larissa from '../media/01.png';
@@ -10,28 +7,12 @@ export default class About extends Component {
 		super(props);
 		this.state = {
 			persons:[
-				// {
-				// 	name: 'Jeelz',
-				// 	description:'Video & Produktion',
-				// 	cover: 'Jeels ist unser Allrounder. Ob Foto oder Video, beides fasziniert ihn. Es fing an mit einigen Urlaubs- und Hochzeitsvideos bis schließlich die Entscheidung fiel, alles auf professionellere Beine zu stellen. Squeezemotions war geboren.',
-				// 	imageSrc: './images/01.jpg'
-				// },
-				// {
-				// 	name: 'Larissa',
-				// 	description:'Fotografie',
-				// 	cover: 'Ihr wollt kreative Fotografie? Larissa ist sprichwörtlich für jedes Abenteuer zu haben. Sie fotografiert von Afrika über Island bis nach Zürich alles was ihr vor die Linse kommt. Und das mit atemberaubenden Ergebnissen. Überzeugt Euch selbst!',
-				// 	imageSrc: './images/02.png'
-				// },
 			],
 			newPersonName: '',
 			newPersonDescription:'',
 			newPersonCover: '',
 			newPersonImageSrc: ''
 		};
-		this.updateNewPersonName = this.updateNewPersonName.bind(this);
-		this.updateNewPersonDescription = this.updateNewPersonDescription.bind(this);
-		this.updateNewPersonCover = this.updateNewPersonCover.bind(this);
-		this.updateNewPersonImageSrc = this.updateNewPersonImageSrc.bind(this);
 		// this.addPerson = this.addPerson.bind(this);
 		// this.removePerson = this.removePerson.bind(this);
 	}
@@ -76,26 +57,26 @@ export default class About extends Component {
     //         }
     //     });
 	// }
-	updateNewPersonName(e){
-		this.setState({
-			newPersonName: e.target.value
-		})
-	}
-	updateNewPersonDescription(e){
-		this.setState({
-			newPersonDescription: e.target.value
-		})
-	}
-	updateNewPersonCover(e){
-		this.setState({
-			newPersonCover: e.target.value
-		})
-	}
-	updateNewPersonImageSrc(e){
-		this.setState({
-			newPersonImageSrc: e.target.value
-		})
-	}
+	// updateNewPersonName(e){
+	// 	this.setState({
+	// 		newPersonName: e.target.value
+	// 	})
+	// }
+	// updateNewPersonDescription(e){
+	// 	this.setState({
+	// 		newPersonDescription: e.target.value
+	// 	})
+	// }
+	// updateNewPersonCover(e){
+	// 	this.setState({
+	// 		newPersonCover: e.target.value
+	// 	})
+	// }
+	// updateNewPersonImageSrc(e){
+	// 	this.setState({
+	// 		newPersonImageSrc: e.target.value
+	// 	})
+	// }
 	render() {
 		if(this.props.persons && this.props.persons.length > 0)
 		return (
@@ -105,30 +86,26 @@ export default class About extends Component {
 				<div className="persons">
 					{ this.props.persons.map((person)=>{
 						return <div className="person" key={person.cover}>
-						
-									<div className="person-image-cut">
-									
-										<div className="person-image">
-										
-											<img src={person.imageSrc} alt={person.name} key={person.name}/>	
+									<div className="person-image-cut ">
+										<div className="person-image ">
+											<img src={person.imageSrc} alt={person.name} key={person.name}/>
 										</div>
 									</div>
-									<div className="person-description">
+									<div className="person-description ">
 
 										<h2>{person.name}</h2>
 										<h3>{person.description}</h3>
 										{this.props.admin &&<div className="person-delete-button" onClick={this.props.removePerson}/>}
 									</div>
-									<div className="person-cover">
+									<div className="person-cover ">
 
 										{person.cover}
 									</div>
 
 								</div>
 					})}
-					{this.props.admin &&	
+					{/* {this.props.admin &&
 						<div className="person">
-							
 							<div className="person-image-cut">
 								<div className="person-image">
 									<img src={this.state.newPersonImageSrc} alt={this.state.newPersonName}/>	
@@ -142,8 +119,8 @@ export default class About extends Component {
 								{this.state.newPersonCover}
 							</div>
 						</div>
-					}
-					{this.props.admin &&
+					} */}
+					{/* {this.props.admin &&
 						<div className="person" style={{
 							clipPath: 'circle(50%)',
 							width: '450px',
@@ -157,7 +134,7 @@ export default class About extends Component {
 							<input className="person-input imagesrc-input" placeholder="Image Source" type="text" value={this.newPersonImageSrc} onChange={this.updateNewPersonImageSrc} />
 							<textarea className=" person-input cover-input" placeholder="Cover" type="text" value={this.newPersonCover} onChange={this.updateNewPersonCover} />
 						</div>
-					}
+					} */}
 				</div>
 			</div>
 		);

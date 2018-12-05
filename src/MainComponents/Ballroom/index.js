@@ -153,7 +153,6 @@ export default class Ballroom extends Component {
 						>
 							<div className="option-image">
 								<svg id="svg-option1" width="10vw" height="10vw" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-
 									<g>
 										<title>background</title>
 										<rect fill="none" id="canvas_background" height="162" width="162" y="-1" x="-1"/>

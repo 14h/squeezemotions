@@ -23,7 +23,7 @@ class ProgressRing extends React.Component {
 	  return (
           <div className={(progress > 99)?("progress-ring-wrapper animate"):("progress-ring-wrapper ")}>
             <svg
-                height={radius * 2}
+                height={radius * 2 || 'auto'}
                 width={radius * 2}
             >
                 <circle

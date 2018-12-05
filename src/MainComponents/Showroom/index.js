@@ -9,40 +9,6 @@ import './index.css';
 
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
 
-// function slideRenderer(params) {
-//     const { index, key } = params;
-//     if(photos[index%photos.length])
-//     return (
-//       <img src={photos[index%photos.length].src} key={key} alt="sasad"/> 
-//     );
-//     return (
-//         <div key={key}/> 
-//       );
-// }
-
-// const photos = [
-//   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-//   { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-//   { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-//   { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-//   { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
-//   { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-//   { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-//   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
-//   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
-  
-// ]
-
-// function chunk (arr, len) {
-//   var chunks = [],
-//       i = 0,
-//       n = arr.length;
-//   while (i < n) {
-//     chunks.push(arr.slice(i, i += len));
-//   }
-//   return chunks;
-// }
-
 function findWithAttr(array, attr, value) {
 
   for(var i = 0; i < array.length; i += 1) {
@@ -59,7 +25,6 @@ export default class Showroom extends Component {
     this.state = {
       width: -1,
       index: 0,
-      // photos: chunk(photos, 8)  ,
       showOverlay: 0,
       indexOverlay:0,
       imageViewSelected: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
@@ -87,12 +52,6 @@ export default class Showroom extends Component {
       index: value,
     });
   };
-
-  // handleChangeIndex = indexOverlay => {
-  //   this.setState({
-  //     indexOverlay,
-  //   });
-  // };
   addReview(){
       
   }
@@ -151,7 +110,7 @@ export default class Showroom extends Component {
                               columns = 4;
                             }
                             if (width >= 1024){
-                              // columns = 6;
+                              columns = 5;
                             }
                             if (width >= 1824){
                               // columns = 5;
@@ -167,9 +126,10 @@ export default class Showroom extends Component {
                                         // window.onscroll = function () { window.scrollTo(0, document.getElementById('Showroom').scrollTop + document.getElementById('Showroom').getBoundingClientRect().top); };
                                         this.switchOverlay(findWithAttr(this.props.showroomPhotosSet, 'src',e.target.src));
                                       }}
-                                      key={page[0].src} 
+                                      key={ page[0].src } 
                                       photos= {page} 
-                                      columns={columns} 
+                                      columns={columns}
+                                      margin={20} 
                                     />
                           }
                         }
@@ -181,7 +141,12 @@ export default class Showroom extends Component {
         <div className="pagination">
           <div style={this.state.index >0 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index-1)}>‹</div>
           {this.props.photos.map((page,i)=>{
-            return <div key={"photos"+i} className={this.state.index===i? "selected":""} onClick={(e)=>this.handleChange(e,i)}>{i+1}</div>
+            return <div 
+                      key={"photos"+i} 
+                      className={this.state.index===i? "selected":""} 
+                      onClick={(e)=>this.handleChange(e,i)}
+                      style={{ textAlign: 'center' }}
+                    >{i+1}</div>
           })}
           <div style={this.state.index <this.props.photos.length-1 ? {}:{visibility:"hidden"}} onClick={(e)=>this.handleChange(e,this.state.index+1)}>›</div>
         </div>
